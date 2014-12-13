@@ -18,7 +18,7 @@
 		<ul>
 			<li>Username: <input type = "text" name = "username" id = "username"/></li>
 			<li>Password: <input type= "password" name="password" id = "password"/></li>
-			<li><input type = "submit" name = "submit" value = "login"/><input type = "button" name = "Register" value = "Register" onclick = ""></li>
+			<li><input type = "submit" name = "submit" value = "login"/><input type = "button" name = "Register" value = "Register" onclick = "window.location.href='./register.php'"></li>
 
 		</ul>
 
