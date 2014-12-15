@@ -6,7 +6,7 @@ CREATE TABLE logins(
 
 id int (5) NOT NULL AUTO_INCREMENT,
 username varchar(60) NOT NULL,
-password varchar(30) NOT NULL,
+password varchar(40) NOT NULL,
 PRIMARY KEY (id)
 ) ENGINE=MyISAM;
 

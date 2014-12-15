@@ -1,10 +1,12 @@
 <?php
 
+session_start();
+
 $host="localhost"; // Host name 
-$username=""; // Mysql username 
+$username="root"; // Mysql username 
 $password=""; // Mysql password 
 $db_name="users"; // Database name 
-$tbl_name="logins"; // Table name 
+//$tbl_name="logins"; // Table name 
 
 // Connect to server and select databse.
 $con = mysqli_connect($host, $username, $password);
@@ -23,8 +25,9 @@ $mypassword=sha1($_POST["password"]);
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);
 
-$sql="SELECT * FROM $tbl_name WHERE username='$myusername' AND password='$mypassword';";
-$result=mysqli_query($con, $sql) or die();
+$sql="SELECT * FROM logins WHERE username='" . $myusername . "' AND password='" . $mypassword . "'";
+
+$result=mysqli_query($con, $sql) or die("Cannot query database");
 
 // Mysql_num_row is counting table row
 //$count=mysql_num_rows($result);
@@ -33,13 +36,16 @@ $result=mysqli_query($con, $sql) or die();
 if(mysqli_num_rows($result) == 1){
 
 // Register $myusername, $mypassword and redirect to main page
-session_register("username");
-session_register("password"); 
+//session_start("username");
+//session_start("password"); 
+
+$_SESSION['username'] = $myusername;
+
 header("location:login_success.php");
 }
 else {
 echo "Wrong Username or Password";
 }
 
-mysql_close($con);
+mysqli_close($con);
 ?>
