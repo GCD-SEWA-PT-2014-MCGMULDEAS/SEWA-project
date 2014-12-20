@@ -2,6 +2,7 @@
 
 $newuser = $_POST["username"];
 $newpass = sha1($_POST["password"]);
+$confirmpass = sha1($_POST["password1"]);
 
 $host="localhost"; // Host name 
 $username="root"; // Mysql username 
@@ -26,7 +27,7 @@ echo $sql;
 
 mysqli_query($con, $sql) or die("Query failed");
 
-header("index.php");
+header("login.php");
 
 mysqli_close($con);
 ?>

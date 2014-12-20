@@ -41,7 +41,7 @@ if(mysqli_num_rows($result) == 1){
 
 $_SESSION['username'] = $myusername;
 
-header("location:login_success.php");
+header("location:index.php");
 }
 else {
 echo "Wrong Username or Password";

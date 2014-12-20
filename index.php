@@ -2,28 +2,17 @@
 <html>
 
 <head>
-
-
-	<meta charset = "utf-8">
-
-	<title>Login</title>
-
+<?php include ("login_success.php") ?>
 </head>
 
 <body>
 
-	<link rel="stylesheet" type="text/css" href="login.css">
+     <?php include ("header.php"); ?>
 
-	<form name = "Login" method = "POST" action = "validate.php">
-		<ul>
-			<li>Username: <input type = "text" name = "username" id = "username"/></li>
-			<li>Password: <input type= "password" name="password" id = "password"/></li>
-			<li><input type = "submit" name = "submit" value = "login"/><input type = "button" name = "Register" value = "Register" onclick = "window.location.href='./register.php'"></li>
+     Test of body of homepage
 
-		</ul>
-
-	</form>
+     <?php include ("footer.html"); ?>
 
 </body>
 
-</html>
+</html> 
