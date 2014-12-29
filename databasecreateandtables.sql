@@ -5,8 +5,6 @@ USE gaaplayerdatabase;
 CREATE TABLE userpass(
 	username VARCHAR(15) NOT NULL,
 	password VARCHAR(15) NOT NULL,
-	first_name VARCHAR (15) NOT NULL,
-	second_name VARCHAR (15) NOT NULL,
 	email VARCHAR(30) NOT NULL,
 	PRIMARY KEY(username))
 	engine=InnoDB;
@@ -24,12 +22,11 @@ CREATE TABLE teams(
 CREATE TABLE players(
 	name VARCHAR(30) NOT NULL,
 	date_of_birth DATE NOT NULL,
-	sex VARCHAR(1) NOT NULL, /*allowing for female entries */
+	gender VARCHAR(1) NOT NULL, /*allowing for female entries */
 	height_in_meters INT(2),
 	club_name VARCHAR (30) REFERENCES teams (name),
 	county_name VARCHAR(30) REFERENCES teams (name),
 	position VARCHAR(10) NOT NULL,
-	/*status VARCHAR(12) NOT NULL, leave out for now*/
 	PRIMARY KEY (name))
 	engine=InnoDB;
 	
@@ -47,7 +44,7 @@ CREATE TABLE training(
 	training_type VARCHAR(10) NOT NULL, /*can be PERSONAL, CLUB, COUNTY, THIRD-LEVEL, PROVINCE */
 	skills_time_minutes INT(3) NOT NULL,
 	fitness_time_minutes INT(3) NOT NULL,
-	tactical_time_minutes INT(3) NOT NULL,
+	gym_time_minutes INT(3) NOT NULL,
 	recovery_minutes INT(3) NOT NULL,
 	PRIMARY KEY (player_name, training_date))
 	engine=InnoDB;
@@ -73,9 +70,9 @@ CREATE TABLE matches(
 3 Red, Yellow, Black*/
 /*We cna reduce attributes if we need to*/
 CREATE TABLE appearances(
-	player_name VARCHAR(30) NOT NULL REFERENCES players (name),
-	match_date DATE NOT NULL REFERENCES matches (match_date),
-	team_for VARCHAR(20) NOT NULL REFERENCES teams(name),
+	player_name VARCHAR(30),
+	match_date DATE,
+	team_for VARCHAR(20),
 	minutes_played INT(3),
 	distance_covered_meters INT(5),
 	possessions INT(2),
