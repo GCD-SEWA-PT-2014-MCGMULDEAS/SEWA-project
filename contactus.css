@@ -1,0 +1,6 @@
+/*and, we make the position absolute and put width and height to 0 of the iframe. If we fail to enter position:absolute; the iframe height will be restricted for IE, Chrome, etc. */
+iframe{
+	position:absolute;
+	width: 40%;
+	height: 40%;
+}
