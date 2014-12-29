@@ -41,7 +41,7 @@ CREATE TABLE training(
 	player_name VARCHAR(30) REFERENCES players (name),
 	training_date DATE NOT NULL,
 	player_status VARCHAR(10) NOT NULL, /*could be injured and therefore possibly in recovery, otherwise OK */
-	training_type VARCHAR(10) NOT NULL, /*can be PERSONAL, CLUB, COUNTY, THIRD-LEVEL, PROVINCE */
+	training_type VARCHAR(10) NOT NULL,
 	skills_time_minutes INT(3) NOT NULL,
 	fitness_time_minutes INT(3) NOT NULL,
 	gym_time_minutes INT(3) NOT NULL,
