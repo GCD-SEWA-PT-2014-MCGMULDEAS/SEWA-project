@@ -5,7 +5,7 @@ session_start();
 $host="localhost"; // Host name 
 $username="root"; // Mysql username 
 $password=""; // Mysql password 
-$db_name="users"; // Database name 
+$db_name="gaaplayerdatabase"; // Database name 
 //$tbl_name="logins"; // Table name 
 
 // Connect to server and select databse.
@@ -25,7 +25,7 @@ $mypassword=sha1($_POST["password"]);
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);
 
-$sql="SELECT * FROM logins WHERE username='" . $myusername . "' AND password='" . $mypassword . "'";
+$sql="SELECT * FROM userpass WHERE username='" . $myusername . "' AND password='" . $mypassword . "'";
 
 $result=mysqli_query($con, $sql) or die("Cannot query database");
 
@@ -40,6 +40,8 @@ if(mysqli_num_rows($result) == 1){
 //session_start("password"); 
 
 $_SESSION['username'] = $myusername;
+
+//echo session_id();
 
 header("location:index.php");
 }
