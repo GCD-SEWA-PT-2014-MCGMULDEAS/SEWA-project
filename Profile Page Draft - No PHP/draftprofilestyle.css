@@ -10,7 +10,6 @@ body{
 	overflow: scroll;
 }
 
-
 #leftcolumn{
 	background-color:#EBEBE0;
 	margin-top:4.5%;
@@ -26,7 +25,7 @@ body{
 }
 
 #mainbody{
-	margin-top:5%;
+	margin-top:4.5%;
 	width:70%;
 	margin-left:15%;
 	position:absolute;
@@ -46,7 +45,7 @@ body{
 }
 
 #centerright{
-	margin-left:46%;
+	margin-left:42%;
 	margin-right:9%;
 	width:40%;
 	position:absolute;
@@ -62,7 +61,7 @@ table{
 	background-color:#EBEBE0;
 	margin-top:4.5%;
 	margin-left:2px;
-	margin-right:5px;
+	margin-right:2px;
 	float:right;
 	font-size: 10pt;
 	width:13%;
