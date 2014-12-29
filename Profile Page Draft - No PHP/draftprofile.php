@@ -1,6 +1,6 @@
 <?php
 include './dbconnection.php';
-
+//test 30-12-14
 //$county =$_POST["county"];
 $position = "Forward";
 
