@@ -10,6 +10,10 @@ body{
 	overflow: scroll;
 }
 
+table{
+background-color:#f8f8f8;
+}
+
 #leftcolumn{
 	background-color:#EBEBE0;
 	margin-top:4.5%;
@@ -84,7 +88,7 @@ header{
     font-family: Arial;
     top:0px;
     left:0px;
-    position:fixed;
+    position:absolute;
 	font-weight:bold;
 	font-size:18pt;
 	font-style:none;
