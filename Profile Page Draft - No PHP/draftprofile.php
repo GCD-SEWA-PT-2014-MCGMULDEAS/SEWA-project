@@ -4,7 +4,10 @@ include './dbconnection.php';
 //$county =$_POST["county"];
 //$position = "SELECT position FROM players JOIN userpass WHERE players.name = userpass.users_name AND userpass.username = '" . $username . "'";
 //echo $position;
-$position = "FORWARD";
+$username = $_POST["username"];
+$positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $username . "'";
+$positionQueryOutput = mysqli_query($connection, $positionQuery);
+$position = mysqli_fecth_row($positionQueryOutput);
 
 //Training Time All County Player Queries
 $queryT1 = "SELECT AVG(skills_time_minutes) FROM training";
@@ -362,7 +365,7 @@ Club: <br/><br/>
 
 County: <br/><br/>
 
-Position: <br/><br/>
+Position: <?php echo {$position[0]} ?> <br/><br/>
 </div>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
