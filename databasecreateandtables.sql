@@ -3,6 +3,7 @@ CREATE database gaaplayerdatabase;
 USE gaaplayerdatabase;
 
 CREATE TABLE userpass(
+	name VARCHAR (30) NOT NULL,
 	username VARCHAR(15) NOT NULL,
 	password VARCHAR(40) NOT NULL,
 	email VARCHAR(30) NOT NULL,
@@ -72,7 +73,7 @@ CREATE TABLE matches(
 CREATE TABLE appearances(
 	player_name VARCHAR(30),
 	match_date DATE,
-	team_for VARCHAR(20),
+	match_type VARCHAR(10), /*could be club, county, province, Third-Level - generally all county*/
 	minutes_played INT(3),
 	distance_covered_meters INT(5),
 	possessions INT(2),
