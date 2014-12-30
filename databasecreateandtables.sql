@@ -4,7 +4,7 @@ USE gaaplayerdatabase;
 
 CREATE TABLE userpass(
 	username VARCHAR(15) NOT NULL,
-	password VARCHAR(15) NOT NULL,
+	password VARCHAR(40) NOT NULL,
 	email VARCHAR(30) NOT NULL,
 	PRIMARY KEY(username))
 	engine=InnoDB;
@@ -83,6 +83,7 @@ CREATE TABLE appearances(
 	handpasses_complete INT(2),
 	footpasses_complete INT(2),
 	passes_incomplete INT(2),
+	attempts INT(2),
 	shots_on_target INT(2),
 	wides INT(2),
 	saves INT(2),
