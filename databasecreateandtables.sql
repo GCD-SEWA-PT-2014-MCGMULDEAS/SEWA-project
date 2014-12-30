@@ -99,6 +99,6 @@ CREATE TABLE appearances(
 	red_cards INT(1),
 	yellow_cards INT(1),
 	black_cards INT(1),
-	PRIMARY KEY(player_name, match_date, team_for))
+	PRIMARY KEY(player_name, match_date, match_type))
 	engine=InnoDB;
 
