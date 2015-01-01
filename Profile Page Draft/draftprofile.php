@@ -4,70 +4,67 @@ include './dbconnection.php';
 //$county =$_POST["county"];
 //$position = "SELECT position FROM players JOIN userpass WHERE players.name = userpass.users_name AND userpass.username = '" . $username . "'";
 //echo $position;
-$username = $_POST["username"];
-$positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $username . "'";
-$positionQueryOutput = mysqli_query($connection, $positionQuery);
-$position = mysqli_fecth_row($positionQueryOutput);
+$position = "FORWARD";
 
 //Training Time All County Player Queries
-$queryT1 = "SELECT AVG(skills_time_minutes) FROM training";
+$queryT1 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training"; /* WHERE players.name <> '" . $usersname . "'"*/
 $outputT1 = mysqli_query($connection, $queryT1);
 $RowT1 = mysqli_fetch_row($outputT1);
-$queryT2 = "SELECT AVG(fitness_time_minutes) FROM training";
+$queryT2 = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputT2 = mysqli_query($connection, $queryT2);
 $RowT2 = mysqli_fetch_row($outputT2);
-$queryT3 = "SELECT AVG(gym_time_minutes) FROM training";
+$queryT3 = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputT3 = mysqli_query($connection, $queryT3);
 $RowT3 = mysqli_fetch_row($outputT3);
-$queryT4 = "SELECT AVG(recovery_minutes) FROM training";
+$queryT4 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputT4 = mysqli_query($connection, $queryT4);
 $RowT4 = mysqli_fetch_row($outputT4);
 
 //Training Time Position County Player Queries
-$queryT5 = "SELECT AVG(skills_time_minutes) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";
+$queryT5 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'" */
 $outputT5 = mysqli_query($connection, $queryT5);
 $RowT5 = mysqli_fetch_row($outputT5);
-$queryT6 = "SELECT AVG(fitness_time_minutes) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";
+$queryT6 = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> $usersname . "'"*/
 $outputT6 = mysqli_query($connection, $queryT6);
 $RowT6 = mysqli_fetch_row($outputT6);
-$queryT7 = "SELECT AVG(gym_time_minutes) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";
+$queryT7 = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> $usersname . "'"*/
 $outputT7 = mysqli_query($connection, $queryT7);
 $RowT7 = mysqli_fetch_row($outputT7);
-$queryT8 = "SELECT AVG(recovery_minutes) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";
+$queryT8 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> $usersname . "'"*/
 $outputT8 = mysqli_query($connection, $queryT8);
 $RowT8 = mysqli_fetch_row($outputT8);
 
 //Match All County Player Queries
-$queryM1 = "SELECT AVG(minutes_played) FROM appearances";
+$queryM1 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM1 = mysqli_query($connection, $queryM1);
 $RowM1 = mysqli_fetch_row($outputM1);
-$queryM2 = "SELECT AVG(distance_covered_meters) FROM appearances";
+$queryM2 = "SELECT ROUND(AVG(distance_covered_meters),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM2 = mysqli_query($connection, $queryM2);
 $RowM2 = mysqli_fetch_row($outputM2);
-$queryM3 = "SELECT AVG(possessions) FROM appearances";
+$queryM3 = "SELECT ROUND(AVG(possessions),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM3 = mysqli_query($connection, $queryM3);
 $RowM3 = mysqli_fetch_row($outputM3);
-$queryM4 = "SELECT AVG((passes_complete/(passes_complete + passes_incomplete))*100) FROM appearances";
+$queryM4 = "SELECT ROUND(AVG((passes_complete/(passes_complete + passes_incomplete))*100),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM4 = mysqli_query($connection, $queryM4);
 $RowM4 = mysqli_fetch_row($outputM4);
-$queryM5 = "SELECT AVG(((goals + points)/(shots_on_target + wides))*100) FROM appearances";
+$queryM5 = "SELECT ROUND(AVG(((goals + points)/(shots_on_target + wides))*100),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM5 = mysqli_query($connection, $queryM5);
 $RowM5 = mysqli_fetch_row($outputM5);
 
 //Match Position County Player Queries
-$queryM6 = "SELECT AVG(minutes_played) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";
+$queryM6 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM6 = mysqli_query($connection, $queryM6);
 $RowM6 = mysqli_fetch_row($outputM6);
-$queryM7 = "SELECT AVG(distance_covered_meters) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";
+$queryM7 = "SELECT ROUND(AVG(distance_covered_meters),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM7 = mysqli_query($connection, $queryM7);
 $RowM7 = mysqli_fetch_row($outputM7);
-$queryM8 = "SELECT AVG(possessions) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";
+$queryM8 = "SELECT ROUND(AVG(possessions),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM8 = mysqli_query($connection, $queryM8);
 $RowM8 = mysqli_fetch_row($outputM8);
-$queryM9 = "SELECT AVG((passes_complete/(passes_complete + passes_incomplete))*100) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";
+$queryM9 = "SELECT ROUND(AVG((passes_complete/(passes_complete + passes_incomplete))*100),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM9 = mysqli_query($connection, $queryM9);
 $RowM9 = mysqli_fetch_row($outputM9);
-$queryM10 = "SELECT AVG(((goals + points)/(shots_on_target + wides))*100) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";
+$queryM10 = "SELECT ROUND(AVG(((goals + points)/(shots_on_target + wides))*100),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
 $outputM10 = mysqli_query($connection, $queryM10);
 $RowM10 = mysqli_fetch_row($outputM10);
 
@@ -107,20 +104,20 @@ $RowM10 = mysqli_fetch_row($outputM10);
 
 <form method="POST" action = '#'>
 <h1>Please Enter your Training Details:</h1><br/>
-Date of Training: <input type="date" class = "textboxes" name="training-date" value = "training-date" required><br/><br/>
-Type of Training: <select id="training-type" class = "selectionboxes" name="training-type" required>
+<label for="training-date">Date of Training:</label> <input type="date" class = "textboxes" name="training-date" value = "training-date" required><br/><br/>
+<label for="training-type">Type of Training:</label> <select id="training-type" class = "selectionboxes" name="training-type" required>
 <option value="Personal">Personal</option>
 <option value="Club">Club</option>
 <option value="County">County</option>
 </select><br/><br/>
-What is your injury status? <select id="status" class = "selectionboxes" name="status" required>
+<label for="status">What is your injury status?</label> <select id="status" class = "selectionboxes" name="status" required>
 <option value="Injured">Injured</option>
 <option value="OK">OK</option>
 </select><br/><br/>
-Skills Training (in minutes)? <input type="text" class = "textboxes" name="skills-training-length"><br/><br/>
-Fitness Training (in minutes)? <input type="text" class = "textboxes" name="fitness-training-length"><br/><br/>
-Gym Training (in minutes)? <input type="text" class = "textboxes" name="gym-training-length"><br/><br/>
-Recovery Time (in minutes)? <input type="text" class = "textboxes" name="recovery-training-length"><br/><br/>
+<label for="skills-training-length">Skills Training (in minutes)?</label> <input type="text" class = "textboxes" name="skills-training-length"><br/><br/>
+<label for="fitness-training-length">Fitness Training (in minutes)?</label> <input type="text" class = "textboxes" name="fitness-training-length"><br/><br/>
+<label for="gym-training-length">Gym Training (in minutes)?</label> <input type="text" class = "textboxes" name="gym-training-length"><br/><br/>
+<label for="recovery-training-length">Recovery Time (in minutes)?</label> <input type="text" class = "textboxes" name="recovery-training-length"><br/><br/><br/>
 How would you like to compare your details: <input type="radio" name="training-comparison" value = "0" /><b>All</b>
 <input type="radio" name="training-comparison" value = "1" /><b>Position</b><br/><br/>
 Would you like to save these details?<input type="checkbox" name="database-save" value="database-save"><br/><br/>
@@ -160,7 +157,7 @@ Would you like to save these details?<input type="checkbox" name="database-save"
     <td>{$fitnessLength}</td>
     <td>{$gymLength}</td>
     <td>{$recoveryLength}</td>";
-    echo "<tr><td>Comparison</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>";
+    echo "<tr><td>Comparison</td><td>" . ROUND(($skillsLength/$RowT1[0])*100) . "%</td><td>" . ROUND(($fitnessLength/$RowT2[0])*100) . "%</td><td>" . ROUND(($gymLength/$RowT3[0])*100) . "%</td><td>" . ROUND(($recoveryLength/$RowT4[0])*100) . "%</td></tr>";
     echo "</table><br/><br/><br/>";
 } else {
     echo "<table width='80%' border='1'>";
@@ -172,16 +169,9 @@ Would you like to save these details?<input type="checkbox" name="database-save"
     <td>{$fitnessLength}</td>
     <td>{$gymLength}</td>
     <td>{$recoveryLength}</td>";
-    echo "<tr><td>Comparison</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>";
+    echo "<tr><td>Comparison</td><td>" . ROUND(($skillsLength/$RowT5[0])*100) . "%</td><td>" . ROUND(($skillsLength/$RowT6[0])*100) . "%</td><td>" . ROUND(($skillsLength/$RowT7[0])*100) . "%</td><td>" . ROUND(($skillsLength/$RowT8[0])*100) . "%</td></tr>";
     echo "</table><br/><br/><br/>";
-}
-
-    if($databaseSaveCheck){
-      $newUserTrainingData = "INSERT INTO training VALUES ('users name', '$trainingDate', '$status', '$trainingType', '$skillsLength', '$fitnessLength', '$gymLength', '$recoveryLength')";
-      $insertTrainingData = @mysqli_query($connection, $newUserTrainingData);
-    }
-  };
-?>
+}?>
 
 <!--need to make the chart changeable in the same way as we've made the table changeable for position vs. all -->
 
@@ -199,26 +189,41 @@ myChart.setDataArray(myData1B, 'line_1');
 <?php } ?>
 myChart.setDataArray(myData2, 'line_2');
 myChart.setAxisNameX('Training Types');
-myChart.setAxisNameY('Minutes');
-myChart.setSize(350,350);
-/*myChart.setBackgroundColor('#EBEBE0');*/
+myChart.setAxisNameColorX('#5555AA');
+myChart.setAxisNameY('Mins');
+myChart.setIntervalStartY(0);
+myChart.setAxisNameColorY('#5555AA');
+myChart.setSize(360,360);
 myChart.setLineColor('#0000ff', 'line_1');
 myChart.setLineColor('#006600', 'line_2');
+myChart.setLineWidth(3);
 myChart.setTitle('Training Comparison Graph');
 myChart.setTitleColor('#5555AA');
 myChart.setTitleFontSize(12);
+myChart.setBackgroundColor('#f8f8f8');
+myChart.setAxisValuesNumberX(4);
+myChart.setShowXValues(false);
+myChart.setAxisValuesColorX('#5555AA');
+myChart.setAxisValuesColorY('#5555AA');
+myChart.setAxisValuesNumberY(10);
+myChart.setAxisValuesDecimalsY(0);
+myChart.setLabelX([10, 'Skills']);
+myChart.setLabelX([15, 'Fitness']);
+myChart.setLabelX([20, 'Gym']);
+myChart.setLabelX([25, 'Recovery']);
+myChart.setLabelColorX('#5555AA');
 myChart.draw();
 </script>
+
+    <?php if($databaseSaveCheck){
+      $newUserTrainingData = "INSERT INTO training VALUES ('users name', '$trainingDate', '$status', '$trainingType', '$skillsLength', '$fitnessLength', '$gymLength', '$recoveryLength')";
+      $insertTrainingData = @mysqli_query($connection, $newUserTrainingData);
+    }
+  };
+?>
+
 </div>
 
-<!--<br/><br-->
-<!--<div id="chartcontainer">Training Graphic Display Pie Chart</div>
-<script type="text/javascript">
-var myData3 = new Array([10, <?php echo $_POST['skills-training-length']; ?>], [15, <?php echo $_POST['fitness-training-length']; ?>], [20, <?php echo $_POST['gym-training-length']; ?>], [25, <?php echo $_POST['recovery-training-length']; ?>]);
-var myChart3 = new JSChart('chartcontainer', 'pie');
-myChart3.setDataArray(myData3);
-myChart3.draw();
-</script>-->
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
@@ -230,19 +235,19 @@ myChart3.draw();
 
 <form method="POST" action = '#'>
 <h1>Please Enter your Match Details:</h1><br/>
-Date of Match <input type="date" class = "textboxes" name="match-date" value = "match-date" required><br/><br/>
-Type of Match: <select id="match-type" class = "selectionboxes" name="match-type" required>
+<label for="match-date">Date of Match:</label> <input type="date" class = "textboxes" name="match-date" value = "match-date" required><br/><br/>
+<label for="match-type">Type of Match:</label> <select id="match-type" class = "selectionboxes" name="match-type" required>
 <option value="Club">Club</option>
 <option value="County">County</option>
 </select><br/><br/>
-Minutes Played: <input type="text" class = "textboxes" name="minutes-played"><br/><br/>
-Distance Covered in meters: <input type="text" class = "textboxes" name="distance-covered"><br/><br/>
-Number of Possessions: <input type="text" class = "textboxes" name="possessions"><br/><br/>
-Passes Complete: <input type="text" class = "textboxes" name="passes-complete"><br/><br/>
-Passes Incomplete: <input type="text" class = "textboxes" name="passes-incomplete"><br/><br/>
-Attempts: <input type="text" class = "textboxes" name="attempts"><br/><br/>
-Goals: <input type="text" class = "textboxes" name="goals"><br/><br/>
-Points: <input type="text" class = "textboxes" name="points"><br/><br/>
+<label for="minutes-played">Minutes Played:</label> <input type="text" class = "textboxes" name="minutes-played"><br/><br/>
+<label for="distance-covered">Distance Covered in meters:</label> <input type="text" class = "textboxes" name="distance-covered"><br/><br/>
+<label for="possessions">Number of Possessions:</label> <input type="text" class = "textboxes" name="possessions"><br/><br/>
+<label for="passes-complete">Passes Complete:</label> <input type="text" class = "textboxes" name="passes-complete"><br/><br/>
+<label for="passes-incomplete">Passes Incomplete:</label> <input type="text" class = "textboxes" name="passes-incomplete"><br/><br/>
+<label for="attempts">Attempts:</label> <input type="text" class = "textboxes" name="attempts"><br/><br/>
+<label for="goals">Goals:</label> <input type="text" class = "textboxes" name="goals"><br/><br/>
+<label for="points">Points:</label> <input type="text" class = "textboxes" name="points"><br/><br/><br/>
 How would you like to compare your details: <input type="radio" name="match-comparison" value = "0" /><b>All</b>
 <input type="radio" name="match-comparison" value = "1" /><b>Position</b><br/><br/>
 Would you like to save these details?<input type="checkbox" name="database-save2" value="database-save2"><br/><br/>
@@ -275,11 +280,11 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   $possessions = $_POST['possessions'];
   $passesComplete = $_POST['passes-complete'];
   $passesIncomplete = $_POST['passes-incomplete'];
-  $passCompletionPercentage = (($passesComplete / ($passesComplete + $passesIncomplete))*100);
+  $passCompletionPercentage = ROUND(($passesComplete / ($passesComplete + $passesIncomplete))*100);
   $attempts = $_POST['attempts'];
   $goals = $_POST['goals'];
   $points = $_POST['points'];
-  $shotSuccessPercentage = ((($goals + $points) / $attempts)*100);
+  $shotSuccessPercentage = ROUND((($goals + $points) / $attempts)*100);
   $matchComparison = $_POST['match-comparison'];
 
   if($matchComparison == 0){
@@ -291,9 +296,9 @@ Would you like to save these details?<input type="checkbox" name="database-save2
       <td>{$minutesPlayed}</td>
       <td>{$distanceCovered}</td>
       <td>{$possessions}</td>
-      <td>{$passCompletionPercentage}</td>
-      <td>{$shotSuccessPercentage}</td></tr>";
-    echo "<tr><td>Comparison</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>";
+      <td>{$passCompletionPercentage}%</td>
+      <td>{$shotSuccessPercentage}%</td></tr>";
+    echo "<tr><td>Comparison</td><td>" . ROUND(($minutesPlayed/$RowM1[0])*100) . "%</td><td>" . ROUND(($distanceCovered/$RowM2[0])*100) . "%</td><td>" . ROUND(($possessions/$RowM3[0])*100) . "%</td><td>" . ROUND(($passCompletionPercentage/$RowM4[0])*100) . "%</td><td>" . ROUND(($shotSuccessPercentage/$RowM5[0])*100) . "%</td></tr>";
     echo "</table><br/><br/><br/>";
   } else {
      echo "<table width='80%' border='1'>";
@@ -306,12 +311,14 @@ Would you like to save these details?<input type="checkbox" name="database-save2
       <td>{$possessions}</td>
       <td>{$passCompletionPercentage}%</td>
       <td>{$shotSuccessPercentage}%</td></tr>";
-    echo "<tr><td>Comparison</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>";
+    echo "<tr><td>Comparison</td><td>" . ROUND(($minutesPlayed/$RowM6[0])*100) . "%</td><td>" . ROUND(($distanceCovered/$RowM7[0])*100) . "%</td><td>" . ROUND(($possessions/$RowM8[0])*100) . "%</td><td>" . ROUND(($passCompletionPercentage/$RowM9[0])*100) . "%</td><td>" . ROUND(($shotSuccessPercentage/$RowM10[0])*100) . "%</td></tr>";
     echo "</table><br/><br/><br/>";
-  } ?>
+  } 
+  ?>
+
+
 
   <div id="chartcontainer2">Please enter values for Graphic Display</div>
-<!--I've ommitted Distance Covered from the Chart as it distorts chart shape -->
 <script type="text/javascript">
 var myData2A = new Array(['Mins Plyd', <?php echo $RowM1[0]; ?>, <?php echo $_POST['minutes-played']; ?>], ['Poss', <?php echo $RowM3[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM4[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM5[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
 var myData2B = new Array(['Mins Plyd', <?php echo $RowM6[0]; ?>, <?php echo $_POST['minutes-played']; ?>], ['Poss', <?php echo $RowM8[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM9[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM10[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
@@ -324,11 +331,18 @@ myChart2.setDataArray(myData2B);
 myChart2.setBarColor('#0000ff', 1);
 myChart2.setBarColor('#006600', 2);
 myChart2.setAxisNameX('Match KPIs');
+myChart2.setAxisNameColorX('#5555AA');
 myChart2.setAxisNameY('Averages');
-myChart2.setSize(380, 380);
+myChart2.setAxisNameColorY('#5555AA');
+myChart2.setSize(520, 360);
 myChart2.setTitle('Match KPI Comparison Graph');
 myChart2.setTitleColor('#5555AA');
 myChart2.setTitleFontSize(12);
+myChart2.setAxisValuesColorX('#5555AA');
+myChart2.setAxisValuesColorY('#5555AA');
+myChart2.setAxisValuesNumberY(10);
+myChart2.setAxisValuesDecimalsY(0);
+myChart2.setBackgroundColor('#f8f8f8');
 myChart2.draw();
 </script>
 </div>
@@ -365,14 +379,17 @@ Club: <br/><br/>
 
 County: <br/><br/>
 
-Position: <?php echo {$position[0]} ?> <br/><br/>
+Position: <br/><br/>
 </div>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
-<footer>Registered to GFC</footer>
 
+<!--<footer>
+    Registered to GFC
+</footer>-->
 
 
 </body>
+
 </html>
