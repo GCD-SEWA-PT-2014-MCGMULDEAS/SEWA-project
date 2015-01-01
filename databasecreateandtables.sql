@@ -31,13 +31,6 @@ CREATE TABLE players(
 	PRIMARY KEY (name))
 	engine=InnoDB;
 	
-/*Intermediate table between users and players given the Many to Many relationship */
-CREATE TABLE user_player(
-	username VARCHAR (30) REFERENCES userpass(username),
-	player_name VARCHAR (30) REFERENCES players(name),
-	PRIMARY KEY (username, player_name))
-	engine=InnoDB;
-	
 CREATE TABLE training(
 	player_name VARCHAR(30) REFERENCES players (name),
 	training_date DATE NOT NULL,
