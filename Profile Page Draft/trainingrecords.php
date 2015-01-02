@@ -6,8 +6,6 @@ include './dbconnection.php';
 
 @session_start();
 
-
-
 $positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $positionQueryOutput = mysqli_query($connection, $positionQuery);
 $position = mysqli_fetch_row($positionQueryOutput);
@@ -31,22 +29,22 @@ $club = mysqli_fetch_row($clubQueryOutput);
 $countyQuery = "SELECT county_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $countyQueryOutput = mysqli_query($connection, $countyQuery);
 $county = mysqli_fetch_row($countyQueryOutput);
-$usersName = "Michael Darragh McAuley";
-$trainingRecords = "SELECT * FROM training WHERE player_name = '" . $usersName . "'";
+
+$trainingRecords = "SELECT * FROM training WHERE player_name = '" . $name[0] . "'";
 $outputTraining = mysqli_query($connection, $trainingRecords);
 $RowTR1 = mysqli_fetch_row($outputTraining); 
 
 //Training Averages for Chart and table
-$avgSkillsQuery = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training WHERE player_name = '" . $usersName . "'";
+$avgSkillsQuery = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training WHERE player_name = '" . $name[0] . "'";
 $avgSkillsOutput = mysqli_query($connection, $avgSkillsQuery);
 $avgSkills = mysqli_fetch_row($avgSkillsOutput);
-$avgFitnessQuery = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training WHERE player_name = '" . $usersName . "'";
+$avgFitnessQuery = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training WHERE player_name = '" . $name[0] . "'";
 $avgFitnessOutput = mysqli_query($connection, $avgFitnessQuery);
 $avgFitness = mysqli_fetch_row($avgFitnessOutput);
-$avgGymQuery = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training WHERE player_name = '" . $usersName . "'";
+$avgGymQuery = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training WHERE player_name = '" . $name[0] . "'";
 $avgGymOutput = mysqli_query($connection, $avgGymQuery);
 $avgGym = mysqli_fetch_row($avgGymOutput);
-$avgRecoveryQuery = "SELECT ROUND(AVG(recovery_minutes),2) FROM training WHERE player_name = '" . $usersName . "'";
+$avgRecoveryQuery = "SELECT ROUND(AVG(recovery_minutes),2) FROM training WHERE player_name = '" . $name[0] . "'";
 $avgRecoveryOutput = mysqli_query($connection, $avgRecoveryQuery);
 $avgRecovery = mysqli_fetch_row($avgRecoveryOutput);
 ?>
@@ -92,8 +90,15 @@ Position: <?php echo $position[0]; ?> <br/><br/>
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
 <div id = "mainbody">
-<h1> Your Training records are as follows: </h1>
-<?php echo "<table width='80%' border='1'>";
+<?php
+
+if($RowTR1[0] == null){
+	echo "<h1>You have not entered any Training Records!</h1>";
+} else {
+
+
+echo "<h1>Your Training records are as follows:</h1>";
+echo "<table width='80%' border='1'>";
 echo "<tr><th colspan='7' align='center'>Training Records Previously Entered</th></tr>";
 echo "<tr><td>Date</td><td>Status</td><td>Training Type</td><td>Skills Time</td><td>Fitness Time</td><td>Gym Time</td><td>Recovery Time</td></tr>";
 do {
@@ -130,7 +135,9 @@ echo "<tr><td>Your Averages </td><td>n/a</td><td>n/a</td><td>{$avgSkills[0]}</td
 	myChart.draw();
 </script>
 
-
+<?php
+	};
+?>
 
 </div>
 

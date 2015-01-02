@@ -1,8 +1,5 @@
 <?php
 include './dbconnection.php';
-?>
-
-<?php
 
 @session_start();
 $positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
@@ -29,6 +26,9 @@ $countyQuery = "SELECT county_name FROM players JOIN userpass WHERE userpass.nam
 $countyQueryOutput = mysqli_query($connection, $countyQuery);
 $county = mysqli_fetch_row($countyQueryOutput);
 
+$matchRecords = "SELECT * FROM appearances WHERE player_name = '" . $name[0] . "'";
+$outputMatch = mysqli_query($connection, $matchRecords);
+$RowMA1 = mysqli_fetch_row($outputMatch);
 ?>
 
 <html>
@@ -73,29 +73,33 @@ Position: <?php echo $position[0]; ?> <br/><br/>
 <div id = "mainbody">
 <h1> Your Match records are as follows: </h1>
 <?php
-$usersName = "Michael Darragh McAuley";
-$matchRecords = "SELECT * FROM appearances WHERE player_name = '" . $usersName . "'";
-$outputMatch = mysqli_query($connection, $matchRecords);
-$RowMA1 = mysqli_fetch_row($outputMatch);
 
+if($RowMA1[0] == null){
+	echo "<h1>You have not entered any Match Records!</h1>";
+} else {
+echo "<h1> Your Match records are as follows: </h1>";
 echo "<table width='80%' border='1'>";
 echo "<tr><th colspan='10' align='center'>Match Records Previously Entered</th></tr>";
 echo "<tr><td>Date</td><td>Match Type</td><td>Minutes Played</td><td>Distance Covered (mtrs)</td><td>No. of Possesions</td><td>Passes Complete</td><td>Passes Incomplete</td><td>Attempts</td><td>Goals</td><td>Points</td></tr>";
 do {
 echo "<tr><td>{$RowMA1[1]}</td>";
-echo "<td>{$RowMA1[2]}</td>"; //need to add in Match Type to database or derive same
+echo "<td>{$RowMA1[2]}</td>";
 echo "<td>{$RowMA1[3]}</td>";
 echo "<td>{$RowMA1[4]}</td>";
 echo "<td>{$RowMA1[5]}</td>";
 echo "<td>{$RowMA1[9]}</td>";
 echo "<td>{$RowMA1[12]}</td>";
-echo "<td>{$RowMA1[13]}</td>";//need to add in Attempts to database or derive same
+echo "<td>{$RowMA1[13]}</td>";
 echo "<td>{$RowMA1[16]}</td>";
 echo "<td>{$RowMA1[17]}</td></tr>";
 $RowMA1 = mysqli_fetch_row($outputMatch);
-} while ($RowMA1); 
+} while ($RowMA1);  
 
-?></div>
+};
+
+?>
+
+</div>
 
 
 </body>
