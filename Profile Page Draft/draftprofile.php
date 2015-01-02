@@ -1,73 +1,92 @@
 <?php
 include './dbconnection.php';
 
-//$county =$_POST["county"];
-//$position = "SELECT position FROM players JOIN userpass WHERE players.name = userpass.users_name AND userpass.username = '" . $username . "'";
-//echo $position;
-$position = "FORWARD";
+@session_start();
+$positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$positionQueryOutput = mysqli_query($connection, $positionQuery);
+$position = mysqli_fetch_row($positionQueryOutput);
+
+$nameQuery = "SELECT name FROM userpass WHERE userpass.username = '" . $_SESSION["username"] . "'";
+$nameQueryOutput = mysqli_query($connection, $nameQuery);
+$name = mysqli_fetch_row($nameQueryOutput);
+
+$dobQuery = "SELECT date_of_birth FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$dobQueryOutput = mysqli_query($connection, $dobQuery);
+$dob = mysqli_fetch_row($dobQueryOutput);
+
+$genderQuery = "SELECT gender FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$genderQueryOutput = mysqli_query($connection, $genderQuery);
+$gender = mysqli_fetch_row($genderQueryOutput);
+
+$clubQuery = "SELECT club_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$clubQueryOutput = mysqli_query($connection, $clubQuery);
+$club = mysqli_fetch_row($clubQueryOutput);
+
+$countyQuery = "SELECT county_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$countyQueryOutput = mysqli_query($connection, $countyQuery);
+$county = mysqli_fetch_row($countyQueryOutput);
 
 //Training Time All County Player Queries
-$queryT1 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training"; /* WHERE players.name <> '" . $usersname . "'"*/
+$queryT1 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training WHERE player_name <> '" . $name[0] . "'";
 $outputT1 = mysqli_query($connection, $queryT1);
 $RowT1 = mysqli_fetch_row($outputT1);
-$queryT2 = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryT2 = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training WHERE player_name <> '" . $name[0] . "'";
 $outputT2 = mysqli_query($connection, $queryT2);
 $RowT2 = mysqli_fetch_row($outputT2);
-$queryT3 = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryT3 = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training WHERE player_name <> '" . $name[0] . "'";
 $outputT3 = mysqli_query($connection, $queryT3);
 $RowT3 = mysqli_fetch_row($outputT3);
-$queryT4 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryT4 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training WHERE player_name <> '" . $name[0] . "'";
 $outputT4 = mysqli_query($connection, $queryT4);
 $RowT4 = mysqli_fetch_row($outputT4);
 
 //Training Time Position County Player Queries
-$queryT5 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'" */
+$queryT5 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position[0] . "' AND training.player_name <> '" . $name[0] . "'";
 $outputT5 = mysqli_query($connection, $queryT5);
 $RowT5 = mysqli_fetch_row($outputT5);
-$queryT6 = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> $usersname . "'"*/
+$queryT6 = "SELECT ROUND(AVG(fitness_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position[0] . "' AND training.player_name <> '" . $name[0] . "'";
 $outputT6 = mysqli_query($connection, $queryT6);
 $RowT6 = mysqli_fetch_row($outputT6);
-$queryT7 = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> $usersname . "'"*/
+$queryT7 = "SELECT ROUND(AVG(gym_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position[0] . "' AND training.player_name <> '" . $name[0] . "'";
 $outputT7 = mysqli_query($connection, $queryT7);
 $RowT7 = mysqli_fetch_row($outputT7);
-$queryT8 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> $usersname . "'"*/
+$queryT8 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position[0] . "' AND training.player_name <> '" . $name[0] . "'";
 $outputT8 = mysqli_query($connection, $queryT8);
 $RowT8 = mysqli_fetch_row($outputT8);
 
 //Match All County Player Queries
-$queryM1 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM1 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances WHERE player_name <> '" . $name[0] . "'";
 $outputM1 = mysqli_query($connection, $queryM1);
 $RowM1 = mysqli_fetch_row($outputM1);
-$queryM2 = "SELECT ROUND(AVG(distance_covered_meters),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM2 = "SELECT ROUND(AVG(distance_covered_meters),2) FROM appearances WHERE player_name <> '" . $name[0] . "'";
 $outputM2 = mysqli_query($connection, $queryM2);
 $RowM2 = mysqli_fetch_row($outputM2);
-$queryM3 = "SELECT ROUND(AVG(possessions),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM3 = "SELECT ROUND(AVG(possessions),2) FROM appearances WHERE player_name <> '" . $name[0] . "'";
 $outputM3 = mysqli_query($connection, $queryM3);
 $RowM3 = mysqli_fetch_row($outputM3);
-$queryM4 = "SELECT ROUND(AVG((passes_complete/(passes_complete + passes_incomplete))*100),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM4 = "SELECT ROUND(AVG((passes_complete/(passes_complete + passes_incomplete))*100),2) FROM appearances WHERE player_name <> '" . $name[0] . "'";
 $outputM4 = mysqli_query($connection, $queryM4);
 $RowM4 = mysqli_fetch_row($outputM4);
-$queryM5 = "SELECT ROUND(AVG(((goals + points)/(shots_on_target + wides))*100),2) FROM appearances";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM5 = "SELECT ROUND(AVG(((goals + points)/(shots_on_target + wides))*100),2) FROM appearances WHERE player_name <> '" . $name[0] . "'";
 $outputM5 = mysqli_query($connection, $queryM5);
 $RowM5 = mysqli_fetch_row($outputM5);
 
 //Match Position County Player Queries
-$queryM6 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM6 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position[0] . "' AND appearances.player_name <> '" . $name[0] . "'";
 $outputM6 = mysqli_query($connection, $queryM6);
 $RowM6 = mysqli_fetch_row($outputM6);
-$queryM7 = "SELECT ROUND(AVG(distance_covered_meters),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM7 = "SELECT ROUND(AVG(distance_covered_meters),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position[0] . "' AND appearances.player_name <> '" . $name[0] . "'";
 $outputM7 = mysqli_query($connection, $queryM7);
 $RowM7 = mysqli_fetch_row($outputM7);
-$queryM8 = "SELECT ROUND(AVG(possessions),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM8 = "SELECT ROUND(AVG(possessions),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position[0] . "' AND appearances.player_name <> '" . $name[0] . "'";
 $outputM8 = mysqli_query($connection, $queryM8);
 $RowM8 = mysqli_fetch_row($outputM8);
-$queryM9 = "SELECT ROUND(AVG((passes_complete/(passes_complete + passes_incomplete))*100),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM9 = "SELECT ROUND(AVG((passes_complete/(passes_complete + passes_incomplete))*100),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position[0] . "' AND appearances.player_name <> '" . $name[0] . "'";
 $outputM9 = mysqli_query($connection, $queryM9);
 $RowM9 = mysqli_fetch_row($outputM9);
-$queryM10 = "SELECT ROUND(AVG(((goals + points)/(shots_on_target + wides))*100),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position . "'";/* WHERE players.name <> '" . $usersname . "'"*/
+$queryM10 = "SELECT ROUND(AVG(((goals + points)/(shots_on_target + wides))*100),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position[0] . "' AND appearances.player_name <> '" . $name[0] . "'";
 $outputM10 = mysqli_query($connection, $queryM10);
 $RowM10 = mysqli_fetch_row($outputM10);
-
 
 ?>
 
@@ -175,7 +194,7 @@ Would you like to save these details?<input type="checkbox" name="database-save"
 
 <!--need to make the chart changeable in the same way as we've made the table changeable for position vs. all -->
 
-<div id="chartcontainer">Please enter values for Graphic Display</div>
+<div id="chartcontainer"> <!--Grahpic Display--></div>
 
 <script type="text/javascript">
 var myData1A = new Array([10, <?php echo $RowT1[0]; ?>], [15, <?php echo $RowT2[0]; ?>], [20, <?php echo $RowT3[0]; ?>], [25, <?php echo $RowT4[0]; ?>]);
@@ -200,7 +219,7 @@ myChart.setLineWidth(3);
 myChart.setTitle('Training Comparison Graph');
 myChart.setTitleColor('#5555AA');
 myChart.setTitleFontSize(12);
-myChart.setBackgroundColor('#f8f8f8');
+/*myChart.setBackgroundColor('#f8f8f8');*/
 myChart.setAxisValuesNumberX(4);
 myChart.setShowXValues(false);
 myChart.setAxisValuesColorX('#5555AA');
@@ -216,7 +235,7 @@ myChart.draw();
 </script>
 
     <?php if($databaseSaveCheck){
-      $newUserTrainingData = "INSERT INTO training VALUES ('users name', '$trainingDate', '$status', '$trainingType', '$skillsLength', '$fitnessLength', '$gymLength', '$recoveryLength')";
+      $newUserTrainingData = "INSERT INTO training VALUES ('$name', '$trainingDate', '$status', '$trainingType', '$skillsLength', '$fitnessLength', '$gymLength', '$recoveryLength')";
       $insertTrainingData = @mysqli_query($connection, $newUserTrainingData);
     }
   };
@@ -285,6 +304,7 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   $goals = $_POST['goals'];
   $points = $_POST['points'];
   $shotSuccessPercentage = ROUND((($goals + $points) / $attempts)*100);
+  $distancePerMinute = ROUND($distanceCovered / $minutesPlayed);
   $matchComparison = $_POST['match-comparison'];
 
   if($matchComparison == 0){
@@ -316,12 +336,10 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   } 
   ?>
 
-
-
-  <div id="chartcontainer2">Please enter values for Graphic Display</div>
+ <div id="chartcontainer2"><!--Grahpic Display--></div>
 <script type="text/javascript">
-var myData2A = new Array(['Mins Plyd', <?php echo $RowM1[0]; ?>, <?php echo $_POST['minutes-played']; ?>], ['Poss', <?php echo $RowM3[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM4[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM5[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
-var myData2B = new Array(['Mins Plyd', <?php echo $RowM6[0]; ?>, <?php echo $_POST['minutes-played']; ?>], ['Poss', <?php echo $RowM8[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM9[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM10[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
+var myData2A = new Array(['Distance(Mtrs) per Min', <?php echo ROUND($RowM2[0]/$RowM1[0]); ?>, <?php echo  $distancePerMinute; ?>], ['Poss', <?php echo $RowM3[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM4[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM5[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
+var myData2B = new Array(['Distance(Mtrs) per Min', <?php echo ROUND($RowM7[0]/$RowM6[0]); ?>, <?php echo  $distancePerMinute; ?>], ['Poss', <?php echo $RowM8[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM9[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM10[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
 var myChart2 = new JSChart('chartcontainer2', 'bar');
 <?php if($_POST['match-comparison'] == 0){ ?>
 myChart2.setDataArray(myData2A);
@@ -332,7 +350,7 @@ myChart2.setBarColor('#0000ff', 1);
 myChart2.setBarColor('#006600', 2);
 myChart2.setAxisNameX('Match KPIs');
 myChart2.setAxisNameColorX('#5555AA');
-myChart2.setAxisNameY('Averages');
+myChart2.setAxisNameY('Avgs');
 myChart2.setAxisNameColorY('#5555AA');
 myChart2.setSize(520, 360);
 myChart2.setTitle('Match KPI Comparison Graph');
@@ -342,14 +360,15 @@ myChart2.setAxisValuesColorX('#5555AA');
 myChart2.setAxisValuesColorY('#5555AA');
 myChart2.setAxisValuesNumberY(10);
 myChart2.setAxisValuesDecimalsY(0);
-myChart2.setBackgroundColor('#f8f8f8');
+/*myChart2.setBackgroundColor('#f8f8f8');*/
 myChart2.draw();
 </script>
 </div>
 
+
 <?php
 if($databaseSaveCheck2){
-      $newUserMatchData = "INSERT INTO appearances VALUES ('users name', '$matchDate', 'users club', '$minutesPlayed', '$distanceCovered', '$possessions', 'null', 'null', 'null', '$passesComplete', 'null', 'null', '$passesIncomplete', 'null', 'null', 'null', '$goals', '$points', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null')";
+      $newUserMatchData = "INSERT INTO appearances VALUES ('$name', '$matchDate', '$matchType', '$minutesPlayed', '$distanceCovered', '$possessions', 'null', 'null', 'null', '$passesComplete', 'null', 'null', '$passesIncomplete', '$attempts', 'null', 'null', 'null', '$goals', '$points', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null')";
       $insertMatchData = @mysqli_query($connection, $newUserMatchData); 
     }
 
@@ -369,17 +388,17 @@ if($databaseSaveCheck2){
 <!--They have accessed with their username which is stored in our database and in registering for our site they will have provided their name, dob, gender, club, county, position, etc.-->
 
 
-Name: <br/><br/>
+Name: <?php echo $name[0]; ?><br/><br/>
 
-Date of Birth: <br/><br/>  
+Date of Birth: <?php echo $dob[0]; ?><br/><br/>  
 
-Gender: <br/><br/>
+Gender: <?php echo $gender[0]; ?><br/><br/>
 
-Club: <br/><br/>
+Club: <?php echo $club[0]; ?><br/><br/>
 
-County: <br/><br/>
+County: <?php echo $county[0]; ?><br/><br/>
 
-Position: <br/><br/>
+Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
