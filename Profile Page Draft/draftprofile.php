@@ -236,7 +236,7 @@ myChart.draw();
 </script>
 
     <?php if($databaseSaveCheck){
-      $newUserTrainingData = "INSERT INTO training VALUES ('$name', '$trainingDate', '$status', '$trainingType', '$skillsLength', '$fitnessLength', '$gymLength', '$recoveryLength')";
+      $newUserTrainingData = "INSERT INTO training VALUES ('$name[0]', '$trainingDate', '$status', '$trainingType', '$skillsLength', '$fitnessLength', '$gymLength', '$recoveryLength')";
       $insertTrainingData = @mysqli_query($connection, $newUserTrainingData);
     }
   };
@@ -369,7 +369,7 @@ myChart2.draw();
 
 <?php
 if($databaseSaveCheck2){
-      $newUserMatchData = "INSERT INTO appearances VALUES ('$name', '$matchDate', '$matchType', '$minutesPlayed', '$distanceCovered', '$possessions', 'null', 'null', 'null', '$passesComplete', 'null', 'null', '$passesIncomplete', '$attempts', 'null', 'null', 'null', '$goals', '$points', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null')";
+      $newUserMatchData = "INSERT INTO appearances VALUES ('$name[0]', '$matchDate', '$matchType', '$minutesPlayed', '$distanceCovered', '$possessions', 'null', 'null', 'null', '$passesComplete', 'null', 'null', '$passesIncomplete', '$attempts', 'null', 'null', 'null', '$goals', '$points', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null')";
       $insertMatchData = @mysqli_query($connection, $newUserMatchData); 
     }
 
