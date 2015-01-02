@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GFC STATS.COM</title>
+  <link rel = "stylesheet" type="text/css" href="index2.css" />
+</head>
+
+
+<body>
+<!-- ******************************************************************************
+Gavs css ? Section for login and logo in header
+<link rel="stylesheet" type="text/css" href="headerfooter.css">
+-->
+
+	 <div id="header" class="wrap">
+
+        <img class = 'logo' src ="largeImages/Logobevil.jpg" padding-left = '25%' alt = "LOGO" height = '100' align="center">
+
+<?php
+          if(!session_id()){
+                echo "<div class = 'Login'>";
+                echo "<a href = './login.php'> Login </a>";
+                echo"</div>";
+
+          }else{
+                echo "<div class = 'Login'>";
+                echo "<a href = './logout.php'> Logout </a>";
+                echo"</div>";
+          }
+?>
+	</div>
+<!-- Navigation Bar section****************************************************-->
+	<br \>
+	<nav>
+		<div class = "navigation">
+			<ul>
+  				<li><a href="#home">Home</a></li>
+  				<li><a href="#selfcheck">Analysis</a></li>
+  				<li><a href="#contact">Contact</a></li>
+  				<li><a href="#about">About</a></li>
+			</ul>
+		</div>
+	</nav>
+   
+
+<!-- *************************************************************************************
+NavBar is the section to the left with the links to the text
+<div id = "navBar">
+	   <p><h3><a href="#who">Who we are </a></h3></p><br>
+	
+<!-- ****************ANCHOR LINK HERE TO GO TO LINE for line 168******************		
+		 <p><h3><a href="#how">How it works</a></p></h3><br\>
+     <p><h3><a href="#res">Useful Resources</a></p><h3><br\>
+</div>
+
+<!-- **************************************************************************************
+TwitBar takes in the twitter feed 
+
+<div id = "twitBar">
+	<a class="twitter-timeline" href="https://twitter.com/GaelicGamesStat/lists/gaastatsexperts" data-widget-id="541609805602099200"></a>
+
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	</script>
+</div>
+-->
+<!-- ***********************************************************************************
+placeholder is the middle section for the rotating images
+	<layer id="placeholderlayer">
+		<a href='link.htm'><img alt='image1 (9K)' src='largeImages/run2a.jpg' height='400' width='63.5%' align="center" /></a>
+	</layer>
+	<div id="placeholderdiv">
+	<!--	<a href='link.htm'><img alt='image1 (9K)' src='largeImages/run2a.jpg' height='400' width='63.5%' border='0' /></a>
+
+	</div>
+-->
+<!--************************************************************************************ 
+Section with the body text for the main page
+-->
+<section>
+  <div class="page-wrap" id="page-wrap">
+  
+    <h1><a name = "who">Who we are</h1>
+    <p class = 'right' style="margin-left:20px"><img src="largeImages/analystsgroup.jpg" height="150px"> 
+ 
+ GFC-STATS.com is a group project run as part of a submission for a course in Software Engineering for Web Applications in Griffith College Dublin. The team of Cathal, Gavin and Frank have developed the concept to complement the growing number of sites dedicated to sports analysis and GAA sports in particular. The site will evolve as more data becomes available and more in depth comparisons can be made.</p>
+
+  <h1><a name = "how">How it works </h1>
+  <p class = 'left'><img style="float:left" src="largeImages/register.jpg" height="150px">  
+
+To gain access to the analysis section a user must login and register on the site. Once registration is completed, an option is available to input personal data on training and matches based on individual dates. Thus a user can maintain a comprehensive record of their training activities and match performance indicators over time, enablisng them to identify and focus on training activities that will enhance their overall performance.</p>
+
+<p> Once data has been input a user can compare their input v' the complete list of players or specifically players that play in the same position. The output </p>  
+
+
+
+  <h1 style = "text-align:center">Analysing your Activities</style></h1>
+  <p class="right"><img style="float:right" src="largeImages/form1.png" width="20%"> 
+
+Keeping a record of your training and match performances is key to getting the most out of the website. There are a number of ways that you can record this information from basic forms to various apps and software packages. WE have incldued a basic form that uou can download and copy to keep track, though for matches we would recommend a friend or coach records the data for accuracy purposes. Image of dartfish app??</p>
+ 
+
+  <h1 style = "text-align:center"><a name = "res">Resources</style></h1>
+  <p class="right"> Below is a list of resources that can help you improve specific parts of your training and performance on the pitch. They include some downloadable pdfs and short videos.</p>
+
+    <ul><h2>Skills Training</h2>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul><h2>Speed Training</h2>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul><h2>Fitness Training</h2>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul><h2>Strength Training</h2>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+      
+  </div>
+</section>
+<!-- ************************************************************************************
+Footer details here
+-->
+
+<footer class="site-footer">
+  I'm the Sticky Footer.
+</footer>
+
+
+
+ </body>
+ </html>

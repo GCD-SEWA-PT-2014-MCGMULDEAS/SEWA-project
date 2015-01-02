@@ -1,0 +1,309 @@
+header{
+	position:absolute;
+	width: inherit;
+	height: 50px;
+}
+body	{
+		max-width: 100%;
+		width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                padding: 0;
+                background-color: #303030;
+                text-align: center;
+              
+}
+
+
+/*********************************************************************/
+.clearfix:after {
+    display:block;
+    clear:both;
+}
+ 
+/*----- Menu Outline -----*/
+.menu-wrap {
+    width:100%;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+    background:#3e3436;
+    padding-right: 300px;
+}
+ 
+.menu {
+    width:100%;
+    position:relative;
+    margin:0px auto;
+    float: center;
+
+}
+ 
+.menu li {
+    margin:0px;
+    list-style:none;
+    font-family:'Ek Mukta';
+    width: 325px;
+}
+ 
+.menu a {
+    transition:all linear 0.15s;
+    color:#919191;
+}
+ 
+.menu li:hover > a, .menu .current-item > a {
+    text-decoration:none;
+    color:#be5b70;
+}
+ 
+.menu .arrow {
+    font-size:11px;
+    line-height:0%;
+}
+ 
+/*----- Top Level -----*/
+.menu > ul > li {
+    float:left;
+    display:inline-block;
+    position:relative;
+    font-size:19px;
+}
+ 
+.menu > ul > li > a {
+    padding:10px 80px;
+    display:inline-block;
+    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
+}
+ 
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+    background:#2e2728;
+}
+ 
+/*----- Bottom Level -----*/
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1;
+}
+ 
+.sub-menu {
+    width:100%;
+    padding:5px 0px;
+    position:absolute;
+    top:100%;
+    left:0px;
+    z-index:-1;
+    opacity:0;
+    transition:opacity linear 0.15s;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+    background:#2e2728;
+}
+ 
+.sub-menu li {
+    display:block;
+    font-size:16px;
+}
+ 
+.sub-menu li a {
+    padding:10px 30px;
+    display:block;
+}
+ 
+.sub-menu li a:hover, .sub-menu .current-item a {
+    background:#3e3436;
+}
+/*
+nav{
+	position: relative;
+	width: 100%;
+}
+
+nav ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+nav li{
+	display: inline;
+	float:center;
+	font-size: 22px;
+
+}
+nav a:link, nav a:visited {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    color: #EDEDED;
+    background-color: #303030;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover, nav a:active {
+    color: #3399ff;
+}
+/***************************
+login css
+*/
+#login{
+	float: right;
+}
+#button{
+	opacity: 0;
+	color:white;
+	font-size: 16px;
+}
+
+/*****************************************************************************/	
+
+
+
+
+		/*--
+	    background-size: 1349x550px; 
+		text-align: center;
+	    margin: 0 auto;
+		border-top: 0px;
+		height:100%;
+		background-color: #303030;
+		color: white;
+		
+		/*background-image: url("cp3.jpg"); 
+		
+		
+		
+
+	background: -webkit-linear-gradient(#303030, #606060); /* For Safari 5.1 to 6.0 */
+	/*
+    background: -o-linear-gradient(#303030, #606060); /* For Opera 11.1 to 12.0 */
+    /*
+    background: -moz-linear-gradient(#303030, #606060); /* For Firefox 3.6 to 15 */
+    /*
+    background: linear-gradient(#303030, #606060); /* Standard syntax (must be last) */
+
+/************************ NavBar on left hand side of page***********************
+*/
+
+#navBar{
+	/*background-color: #480000;
+	*/
+	background-color: #303030;
+	/*
+	border-bottom:#980000;
+	border-left:#980000;
+	
+	border-width: 0 0 thin thin;
+	border-style:none none groove groove;
+	*/
+
+	font-size: 16px;
+	display:block;
+	float: left;
+	margin: 0 0 0 0px;
+	padding: 0 0px 0 0px;
+	width: 18%;
+	height: 400px;
+	line-height:0.2em;
+}
+#navBar a:link, a:visited {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+    color: #EDEDED;
+    background-color: #303030;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#navBar a:hover, a:active {
+    color: #3399ff;
+}
+/**********************Twitter feed on Right Hand side of page****************
+*/
+#twitBar{
+	background-color: #303030;
+	/*
+	border-bottom:#303030;
+	border-left:#303030;
+	
+	border-width: 5px 5px thin thin;
+	border-style:none none groove groove;
+	*/
+	display:block;
+	float: right;
+	margin: 0 0 0 0px;
+	padding: 0 0px 0 0px;
+	width: 18%;
+	height: 300px;
+	line-height:0.2em;
+}
+/*************************************
+CSS for rotating image section
+*/
+
+
+#placeholderlayer{
+	/*padding: 50px;
+	position:relative;
+	top:50px;
+	left:300px;
+	padding-bottom: 150px
+	*/
+}
+
+#placeholderdiv {
+	position: 0,0px;
+	text-align: left;
+
+}
+
+/********************* CSS for this class
+*/
+section {
+	border-top:20px;
+	border-top-color: #7d7d7d;
+	margin-top: 100px;
+	margin-left: 0px;
+	margin-right: 0px;
+  	max-height: 100%;
+  	max-width: 100%;
+  /* equal to footer height */
+  	/*margin-bottom: -142px; */
+  	color: #454545;
+	background-color:#ededed;
+	font-size: 18px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: left;
+	text-indent: 0%;
+	line-height: 29px;
+	/*
+	-webkit-column-count:3;
+	-moz-column-count:3;
+	column-count:3;
+	
+}
+p.left{
+	padding-right: 0%;
+
+}
+p.right{
+	padding-left:0%;
+
+}
+*/
+#page-wrap:after {
+  content: "";
+  display: block;
+}
+#site-footer, #page-wrap:after {
+  height: 142px; 
+}
+#site-footer {
+  background: orange;
+}
+
