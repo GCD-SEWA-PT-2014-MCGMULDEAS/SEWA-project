@@ -15,33 +15,10 @@
 
                <img src ="" alt = "LOGO">
 
-               <?php
 
-                    if(!session_id()){
-
-                         echo "<div class = 'Login'>";
-
-                         echo "<a href = './login.php'> Login </a>";
-
-                         echo"</div>";
-
-                    }
-
-                    else{
-
-                         echo "<div class = 'Login'>";
-
-                         echo "<a href = './logout.php'> Logout </a>";
-
-                         echo"</div>";
-
-                    }
-
-
-
-?><br \>
+<br \>
                <input type = "button" name = "home" value = "Home" onclick = "window.location.href='./index.php'">
-               <input type = "button" name = "compare" value = "Comparison" onclick = "window.location.href='./comparison.php'">
+               <input type = "button" name = "profile" value = "Profile" onclick = "window.location.href='./login.php'">
                <input type = "button" name = "about" value = "About Us" onclick = "window.location.href='./about.php'">
                <input type = "button" name = "contact" value = "Contact Us" onclick = "window.location.href='./contact.php'">
 

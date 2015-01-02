@@ -43,7 +43,7 @@ $_SESSION['username'] = $myusername;
 
 //echo session_id();
 
-header("location:index.php");
+header("location:draftprofile.php");
 }
 else {
 echo "Wrong Username or Password";

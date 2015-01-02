@@ -28,7 +28,7 @@ die("cannot connect");
 $dbSelect = @mysqli_select_db($con, $db_name);
 
 //$sql="INSERT INTO userpass VALUES ('" . $newusername . "', '" . $name . "', '" . $pass . "', '" . $email . "');";
-$sql="INSERT INTO userpass VALUES ('$newusername', '$name', '$pass', '$email');";
+$sql="INSERT INTO userpass VALUES ('$name','$newusername', '$pass', '$email');";
 $sql1="INSERT INTO players VALUES ('$name', '$dob', '$gender', '$height', '$club', '$county', '$position');";
 //$sql1="INSERT INTO players (name, dob, gender, height, club, county, position) VALUES ('" . $name . "', '" . $dob . "', '" . $gender . "', '" . $height . "', '" . $club . "', '" . $county . "', '" . $position . "');";
 
@@ -41,7 +41,7 @@ mysqli_query($con, $sql) or die("Username already in use.") ;
 mysqli_query($con, $sql1) or die("Query Failed") ;
 
 
-header("location:draftprofile.php");
+header("location:login.php");
 
 mysqli_close($con);
 ?>

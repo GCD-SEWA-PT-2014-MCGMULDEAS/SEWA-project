@@ -3,6 +3,34 @@ include './dbconnection.php';
 ?>
 
 <?php 
+
+@session_start();
+
+
+
+$positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$positionQueryOutput = mysqli_query($connection, $positionQuery);
+$position = mysqli_fetch_row($positionQueryOutput);
+
+$nameQuery = "SELECT name FROM userpass WHERE userpass.username = '" . $_SESSION["username"] . "'";
+$nameQueryOutput = mysqli_query($connection, $nameQuery);
+$name = mysqli_fetch_row($nameQueryOutput);
+
+$dobQuery = "SELECT date_of_birth FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$dobQueryOutput = mysqli_query($connection, $dobQuery);
+$dob = mysqli_fetch_row($dobQueryOutput);
+
+$genderQuery = "SELECT gender FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$genderQueryOutput = mysqli_query($connection, $genderQuery);
+$gender = mysqli_fetch_row($genderQueryOutput);
+
+$clubQuery = "SELECT club_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$clubQueryOutput = mysqli_query($connection, $clubQuery);
+$club = mysqli_fetch_row($clubQueryOutput);
+
+$countyQuery = "SELECT county_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$countyQueryOutput = mysqli_query($connection, $countyQuery);
+$county = mysqli_fetch_row($countyQueryOutput);
 $usersName = "Michael Darragh McAuley";
 $trainingRecords = "SELECT * FROM training WHERE player_name = '" . $usersName . "'";
 $outputTraining = mysqli_query($connection, $trainingRecords);
@@ -32,32 +60,33 @@ $avgRecovery = mysqli_fetch_row($avgRecoveryOutput);
 <body>
 <header>Training Records<br/>
 
-<a href="draftprofileupdated.php">Profile Page</a>
-<a href="matchrecords.php">Your Match Records</a>
-<a href="updatedetails.php">Update User Details</a>
+<a href="./draftprofile.php">Profile</a>
+<a href="./matchrecords.php">Your Match Records</a>
+<a href="./updatedetails.php">Update User Details</a>
+<a href="./logout.php">Logout</a>
 </header>
 
 <div id = "leftcolumn">
 <br/>
-<a href="draftprofileupdated.php">Profile Page</a><br/><br/>
-<a href="matchrecords.php">Your Match Records</a><br/><br/>
-<a href="updatedetails.php">Update User Details</a>
+<a href="./draftprofile.php">Profile</a><br/><br/>
+<a href="./matchrecords.php">Your Match Records</a><br/><br/>
+<a href="./updatedetails.php">Update User Details</a>
 </div>
 
 <div id = "rightcolumn">
 <br/>
 
-Name: <br/><br/>
+Name: <?php echo $name[0]; ?><br/><br/>
 
-Date of Birth: <br/><br/>  
+Date of Birth: <?php echo $dob[0]; ?><br/><br/>  
 
-Gender: <br/><br/>
+Gender: <?php echo $gender[0]; ?><br/><br/>
 
-Club: <br/><br/>
+Club: <?php echo $club[0]; ?><br/><br/>
 
-County: <br/><br/>
+County: <?php echo $county[0]; ?><br/><br/>
 
-Position: <br/><br/>
+Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>

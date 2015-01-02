@@ -105,6 +105,7 @@ $RowM10 = mysqli_fetch_row($outputM10);
 <a href="./trainingrecords.php">Your Training Records</a>
 <a href="./matchrecords.php">Your Match Records</a>
 <a href="./updatedetails.php">Update User Details</a>
+<a href="./logout.php">Logout</a>
 </header>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
