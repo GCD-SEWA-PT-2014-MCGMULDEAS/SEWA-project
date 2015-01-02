@@ -71,7 +71,6 @@ Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
 
 <div id = "mainbody">
-<h1> Your Match records are as follows: </h1>
 <?php
 
 if($RowMA1[0] == null){
