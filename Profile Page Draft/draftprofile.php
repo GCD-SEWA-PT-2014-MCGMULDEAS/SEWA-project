@@ -100,12 +100,12 @@ $RowM10 = mysqli_fetch_row($outputM10);
 <body>
 
 
-<header>Player Profile<br/>
-
-<a href="./trainingrecords.php">Your Training Records</a>
-<a href="./matchrecords.php">Your Match Records</a>
-<a href="./updatedetails.php">Update User Details</a>
-<a href="./logout.php">Logout</a>
+<header>
+<img id="LineImage" src="./LineImage.png" alt="Line Chart" />
+<img id="BarImage" src="./BarImage.png" alt="Bar Chart" />
+<a id="LogoutButton" href="./logout.php">Logout</a>
+<img src="./logo.jpg" alt="GFC Logo" /><br/>
+Player Profile<br/>
 </header>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>

@@ -10,6 +10,34 @@ body{
 	margin-bottom: 3%;
 }
 
+img{
+	border-top: 0px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 1px 1px;
+	height:70px;
+	float:center;
+}
+
+#LineImage{
+	border-top: 0px;
+	float:left;
+	width:10%;
+	height:100%;
+}
+
+#BarImage{
+	border-top: 0px;
+	float:right;
+	width:10%;
+	height:100%;
+}
+
+#LogoutButton{
+	float:right;
+	margin-right:1%;
+	font:11pt;
+}
+
 table{
 background-color:#f8f8f8;
 }
@@ -27,20 +55,20 @@ input[type=text], input[type=date], select {
 
 #leftcolumn{
 	background-color:#EBEBE0;
-	margin-top:4.5%;
+	margin-top:8%;
 	margin-left:2px;
 	margin-right:5px;
 	float:left;
 	padding-left: 5px;
 	font-size: 10pt;
 	width:13%;
-	height:87%;
+	height:100%;
 	box-shadow: 0px 0px 1px 1px;
 	border-radius: 4px;
 }
 
 #mainbody{
-	margin-top:4.5%;
+	margin-top:8%;
 	width:70%;
 	margin-left:15%;
 	position:absolute;
@@ -75,13 +103,13 @@ table{
 
 #rightcolumn{
 	background-color:#EBEBE0;
-	margin-top:4.5%;
+	margin-top:8%;
 	margin-left:2px;
 	margin-right:2px;
 	float:right;
 	font-size: 10pt;
 	width:13%;
-	height:87%;
+	height:100%;
 	box-shadow: 0px 0px 1px 1px;
 	border-radius: 4px;
 	padding-left:5px;
@@ -105,7 +133,7 @@ header{
 	font-size:18pt;
 	font-style:none;
 	text-align:center;
-	/*color:white;*/
+	height:15%;
 	background-color:#EBEBE0;
 	box-shadow: 0px 0px 1px 1px;
 }
