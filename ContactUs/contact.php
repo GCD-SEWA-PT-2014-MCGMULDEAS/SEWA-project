@@ -37,22 +37,22 @@
       <nav class="menu">
           <ul class="clearfix">
               <li>
-                <a href="index2.html">Home<span class="arrow">&#9660;</span></a>
+                <a href="index.php">Home<span class="arrow">&#9660;</span></a>
                 
                 <ul class="sub-menu">
-                    <li><a href="index2.html#comp">Be Competitive</a></li>
-                    <li><a href="index2.html#analyse">Analyse Yourself</a></li>
-                    <li><a href="index2.html#fact">Challenging Facts</a></li>
+                    <li><a href="index.php#comp">Be Competitive</a></li>
+                    <li><a href="index.php#analyse">Analyse Yourself</a></li>
+                    <li><a href="index.php#fact">Challenging Facts</a></li>
                 </ul>
               </li>
               <li>
                  <a href="about.php">About us <span class="arrow">&#9660;</span></a>
    
                 <ul class="sub-menu">
-                    <li><a href="abount.html#who">Who we are</a></li>
-                    <li><a href="about.html#how">How it works</a></li>
-                    <li><a href="about.html#analyse">Analyse</a></li>
-                    <li><a href="about.html#res">Resources</a></li>
+                    <li><a href="about.php#who">Who we are</a></li>
+                    <li><a href="about.php#how">How it works</a></li>
+                    <li><a href="about.php#analyse">Analyse</a></li>
+                    <li><a href="about.php#res">Resources</a></li>
                 </ul>
               </li>
               <li class="current item"> <a href="contact.php">Contact us <span class="arrow">&#9660;</span></a>
@@ -66,7 +66,7 @@
              <li>
                 <a href="#">Analysis<span class="arrow">&#9660;</span></a>
                 <ul class="sub-menu">
-                    <li><a href="login.php">Register</a></li>
+                    <li><a href="register.php">Register</a></li>
                     <li><a href="login.php">Profile</a></li>
                 </ul>
                 <li><a href = "./login.php">Login</a></li>
