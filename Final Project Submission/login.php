@@ -7,12 +7,13 @@
 	<meta charset = "utf-8">
 
 	<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="login.css" />
 
 </head>
 
 <body>
 
-	<link rel="stylesheet" type="text/css" href="login.css">
+
 <div id = "content">
 	<form name = "Login" method = "POST" action = "validate.php">
 		<h1>Welcome. Please Login.</h1>
