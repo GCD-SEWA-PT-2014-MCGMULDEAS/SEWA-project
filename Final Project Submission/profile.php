@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 include './dbconnection.php';
 
@@ -108,7 +109,7 @@ $RowM10 = mysqli_fetch_row($outputM10);
 Player Profile<br/>
 </header>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
+
 
 <div id = "leftcolumn">
 <br/>
@@ -117,27 +118,27 @@ Player Profile<br/>
 <a href="./updatedetails.php">Update User Details</a>
 </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
 <div id = "mainbody">
 <div id = "centerleft">
 
 <form method="POST" action = '#'>
 <h1>Please Enter your Training Details:</h1><br/>
-<label for="training-date">Date of Training:</label> <input type="date" class = "textboxes" name="training-date" value = "training-date" required><br/><br/>
-<label for="training-type">Type of Training:</label> <select id="training-type" class = "selectionboxes" name="training-type" required>
+<label>Date of Training:</label> <input type="date" class = "textboxes" name="training-date" required><br/><br/>
+<label>Type of Training:</label> <select id="training-type" class = "selectionboxes" name="training-type" required>
+<option value="">-</option>
 <option value="Personal">Personal</option>
 <option value="Club">Club</option>
 <option value="County">County</option>
 </select><br/><br/>
-<label for="status">What is your injury status?</label> <select id="status" class = "selectionboxes" name="status" required>
+<label>What is your injury status?</label> <select id="status" class = "selectionboxes" name="status" required>
+<option value="">-</option>
 <option value="Injured">Injured</option>
 <option value="OK">OK</option>
 </select><br/><br/>
-<label for="skills-training-length">Skills Training (in minutes)?</label> <input type="text" class = "textboxes" name="skills-training-length" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="fitness-training-length">Fitness Training (in minutes)?</label> <input type="text" class = "textboxes" name="fitness-training-length" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="gym-training-length">Gym Training (in minutes)?</label> <input type="text" class = "textboxes" name="gym-training-length" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="recovery-training-length">Recovery Time (in minutes)?</label> <input type="text" class = "textboxes" name="recovery-training-length" required onchange="validateNumber(this.value)"><br/><br/><br/>
+<label>Skills Training (in minutes)?</label> <input type="text" class = "textboxes" name="skills-training-length" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Fitness Training (in minutes)?</label> <input type="text" class = "textboxes" name="fitness-training-length" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Gym Training (in minutes)?</label> <input type="text" class = "textboxes" name="gym-training-length" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Recovery Time (in minutes)?</label> <input type="text" class = "textboxes" name="recovery-training-length" required onchange="validateNumber(this.value)"><br/><br/><br/>
 How would you like to compare your details: <input type="radio" name="training-comparison" value = "0" /><b>All</b>
 <input type="radio" name="training-comparison" value = "1" /><b>Position</b><br/><br/>
 Would you like to save these details?<input type="checkbox" name="database-save" value="database-save"><br/><br/>
@@ -244,30 +245,24 @@ myChart.draw();
 
 </div>
 
-
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
 <div id = "centerright">
 
 <form method="POST" action = '#'>
 <h1>Please Enter your Match Details:</h1><br/>
-<label for="match-date">Date of Match:</label> <input type="date" class = "textboxes" name="match-date" value = "match-date" required><br/><br/>
+<label>Date of Match:</label> <input type="date" class = "textboxes" name="match-date" required><br/><br/>
 <label for="match-type">Type of Match:</label> <select id="match-type" class = "selectionboxes" name="match-type" required>
+<option value="">-</option>
 <option value="Club">Club</option>
 <option value="County">County</option>
 </select><br/><br/>
-<label for="minutes-played">Minutes Played:</label> <input type="text" class = "textboxes" name="minutes-played" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="distance-covered">Distance Covered in meters:</label> <input type="text" class = "textboxes" name="distance-covered" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="possessions">Number of Possessions:</label> <input type="text" class = "textboxes" name="possessions" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="passes-complete">Passes Complete:</label> <input type="text" class = "textboxes" name="passes-complete" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="passes-incomplete">Passes Incomplete:</label> <input type="text" class = "textboxes" name="passes-incomplete" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="attempts">Attempts:</label> <input type="text" class = "textboxes" name="attempts" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="goals">Goals:</label> <input type="text" class = "textboxes" name="goals" required onchange="validateNumber(this.value)"><br/><br/>
-<label for="points">Points:</label> <input type="text" class = "textboxes" name="points" required onchange="validateNumber(this.value)"><br/><br/><br/>
+<label>Minutes Played:</label> <input type="text" class = "textboxes" name="minutes-played" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Distance Covered in meters:</label> <input type="text" class = "textboxes" name="distance-covered" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Number of Possessions:</label> <input type="text" class = "textboxes" name="possessions" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Passes Complete:</label> <input type="text" class = "textboxes" name="passes-complete" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Passes Incomplete:</label> <input type="text" class = "textboxes" name="passes-incomplete" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Attempts:</label> <input type="text" class = "textboxes" name="attempts" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Goals:</label> <input type="text" class = "textboxes" name="goals" required onchange="validateNumber(this.value)"><br/><br/>
+<label>Points:</label> <input type="text" class = "textboxes" name="points" required onchange="validateNumber(this.value)"><br/><br/><br/>
 How would you like to compare your details: <input type="radio" name="match-comparison" value = "0" /><b>All</b>
 <input type="radio" name="match-comparison" value = "1" /><b>Position</b><br/><br/>
 Would you like to save these details?<input type="checkbox" name="database-save2" value="database-save2"><br/><br/>
@@ -385,8 +380,6 @@ if($databaseSaveCheck2){
 </div>
 </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
 <div id = "rightcolumn">
 <br/>
 
@@ -406,8 +399,6 @@ County: <?php echo $county[0]; ?><br/><br/>
 
 Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
-
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
 
 <!--<footer>
