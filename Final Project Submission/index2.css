@@ -211,7 +211,8 @@ login css
 	/*background-color: #480000;
 	*/
 	background-color: #303030;
-	/*
+	
+  /*
 	border-bottom:#980000;
 	border-left:#980000;
 	
@@ -346,6 +347,7 @@ footer. {
 iframe{
 	float:center;
 	padding-bottom: 7px;
+  border: 0;
 }
 .col { 
   /*background: #0a5173;*/
