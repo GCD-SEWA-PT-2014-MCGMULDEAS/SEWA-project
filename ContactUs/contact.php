@@ -27,7 +27,51 @@
 </head>
 <body>
 
-<header>	<?php include ("header.php");?> </header>
+  <div id="header" class="wrap">
+
+      <img src ="Images/logo.jpg" alt = "Logo">
+
+  </div>
+  <div class="menu-wrap">
+      <nav class="menu">
+          <ul class="clearfix">
+              <li>
+                <a href="index2.html">Home<span class="arrow">&#9660;</span></a>
+                
+                <ul class="sub-menu">
+                    <li><a href="index2.html#comp">Be Competitive</a></li>
+                    <li><a href="index2.html#analyse">Analyse Yourself</a></li>
+                    <li><a href="index2.html#fact">Challenging Facts</a></li>
+                </ul>
+              </li>
+              <li>
+                 <a href="about.php">About us <span class="arrow">&#9660;</span></a>
+   
+                <ul class="sub-menu">
+                    <li><a href="abount.html#who">Who we are</a></li>
+                    <li><a href="about.html#how">How it works</a></li>
+                    <li><a href="about.html#analyse">Analyse</a></li>
+                    <li><a href="about.html#res">Resources</a></li>
+                </ul>
+              </li>
+              <li class="current item"> <a href="contact.php">Contact us <span class="arrow">&#9660;</span></a>
+   
+                <ul class="sub-menu">
+                    <li><a href="contact.php#form">Contact form</a></li>
+                    <li><a href="contact.php#map">Find us</a></li>
+                    <li><a href="contact.php#email">Email</a></li>
+                    <li><a href="contact.php#phone">Phone</a></li>
+                </ul>
+             <li>
+                <a href="#">Analysis<span class="arrow">&#9660;</span></a>
+                <ul class="sub-menu">
+                    <li><a href="login.php">Register</a></li>
+                    <li><a href="login.php">Profile</a></li>
+                </ul>
+                <li><a href = "./login.php">Login</a></li>
+          </ul>
+      </nav>
+  </div>
 
 <div id = "mainbody">
 
@@ -51,9 +95,9 @@ Dublin 2</span>
 </div>
 
 <div id = "rightcenter">
-<iframe frameborder="2" marginheight="2" marginwidth="2"
+<!--<iframe frameborder="2" marginheight="2" marginwidth="2"
 src= "https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?><?php echo $embeddedCode; ?>"></iframe>
-
+-->
 
 </div>
 
