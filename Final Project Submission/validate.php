@@ -4,22 +4,6 @@ include './dbconnection.php';
 
 session_start();
 
-//$host="localhost"; // Host name 
-//$username="root"; // Mysql username 
-//$password=""; // Mysql password 
-//$db_name="gaaplayerdatabase"; // Database name 
-//$tbl_name="logins"; // Table name 
-
-// Connect to server and select databse.
-//$con = mysqli_connect($host, $username, $password);
-
-//if(!$con){
-//die("cannot connect");
-//}
-//mysql_select_db("$db_name")or die("cannot select DB");
-
-//$dbSelect = @mysqli_select_db($con, $db_name);
-
 // username and password sent from form 
 $myusername=$_POST["username"]; 
 $mypassword=sha1($_POST["password"]); 
