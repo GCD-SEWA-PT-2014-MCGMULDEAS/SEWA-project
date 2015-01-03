@@ -27,6 +27,7 @@
 </head>
 <body>
 
+<header>
   <div id="header" class="wrap">
 
       <img src ="Images/logo.jpg" alt = "Logo">
@@ -72,16 +73,17 @@
           </ul>
       </nav>
   </div>
+  </header>
 
 <div id = "mainbody">
 
 <div id = "leftcenter">
 <div class = "forminline">
 <form name = "email" method = "POST" action = "sendmail.php" onSubmit = "return validateForm();">
-Name*<br \><input type = "textbox" name = "name"><br/>
-Email*<br \><input type = "textbox" name = "email"><br/>
-Subject*<br \><input type = "textbox" name = "subject"><br/>
-Message*<br \><textarea name = "message" rows = "10" cols = "50"></textarea><br/>
+Name<span id="asterisk">*</span><br \><input type = "textbox" name = "name"><br/>
+Email<span id="asterisk">*</span><br \><input type = "textbox" name = "email"><br/>
+Subject<span id="asterisk">*</span><br \><input type = "textbox" name = "subject"><br/>
+Message<span id="asterisk">*</span><br \><textarea name = "message" rows = "10" cols = "50"></textarea><br/>
 <input type = "submit" name = "submit" value = "Submit Form"/><br/><br/>
 </form>
 </div>
@@ -95,21 +97,21 @@ Dublin 2</span>
 </div>
 
 <div id = "rightcenter">
-<!--<iframe frameborder="2" marginheight="2" marginwidth="2"
+<iframe frameborder="2" marginheight="2" marginwidth="2"
 src= "https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?><?php echo $embeddedCode; ?>"></iframe>
--->
 
 </div>
 
 </body>
 
 <footer>
-<div class="col">
+<div class="col" id="firstfootercolumn">
   <h2>Sample links</h2>
  <span id = "minorlinks"><a href="#">Terms & Conditions</a><br/></span>
   <span id = "minorlinks"><a href="#">Sitemap</a><br/></span>
   <span id = "minorlinks"><a href="#">Useful links</a><br/></span>
   </div>
+
 <div class="col">
   <h2>GFC-Stats.com</h2>
   <ul>
@@ -118,13 +120,14 @@ src= "https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?><?php ec
     <li>All references to any known individuals are for demonstration purposes only</li>
   </ul>
 </div>
+
 <div class="col" id = "image">
   <h2>You can find us on:</h2>
   <ul>
-    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="50px" height="50px"></a></li>
-    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="50px" height= "50px"></a></li>
-    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="50px" height= "50px"></a></li>
-    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="50px" height= "50px"></a></li>
+    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="30px" height="30px"></a></li>
+    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="30px" height= "30px"></a></li>
+    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="30px" height= "30px"></a></li>
+    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="30px" height= "30px"></a></li>
   </ul>
 </div>
 </footer>
