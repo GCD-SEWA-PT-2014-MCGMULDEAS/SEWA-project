@@ -30,11 +30,12 @@
 
 	<title>Register</title>
 
+	<link rel="stylesheet" type="text/css" href="register.css" />
+
 </head>
 
 <body>
-	<link rel="stylesheet" type="text/css" href="register.css">
-
+	
 	<div id = "content">
 	<form name = "Register" method = "POST" action = "registrationvalidation.php" OnSubmit = "return validateForm();">
 			<h1>Registration</h1>
@@ -44,13 +45,15 @@
 			<label>Enter your name:</label> <input type = "text" name = "name" id = "name" required/><br/>
 			<label>Enter an email address:</label> <input type = "text" name = "email" id = "email" required/><br/>
 			<label>Gender:</label> <select id = "gender"  name = "gender" required>
+			<option value = "">-</option>
 			<option value = "M">Male</option>
 			<option value = "F">Female</option></select><br/>
-			<label>Date of Birth:</label> <input type="date" name="dob" value = "dob" required><br/>
+			<label>Date of Birth:</label> <input type="date" name="dob"  required><br/>
 			<label>Height(Meters):</label><input type = "text" name = "height" id = "height" required/><br/>
 			<label>Club:</label><input type = "text" name = "club" id = "club" required/><br/>
 			<label>County:</label><input type = "text" name = "county" id = "county" required/><br/>
 			<label>Position:</label><select id = "position" name = "position" required>
+			<option value = "">-</option>
 			<option value = "GOALKEEPER">Goalkeeper</option>
 			<option value = "DEFENDER">Defender</option>
 			<option value = "MIDFIELDER">Midfielder</option>
