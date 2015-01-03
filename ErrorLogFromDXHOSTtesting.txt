@@ -1,0 +1,1 @@
+[04-Jan-2015 02:03:20 Europe/Moscow] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gfc/public_html/dbconnection.php:17) in /home/gfc/public_html/registrationvalidation.php on line 46
