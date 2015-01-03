@@ -97,12 +97,13 @@ Dublin 2</span>
 </div>
 
 <div id = "rightcenter">
-<iframe frameborder="2" marginheight="2" marginwidth="2"
+<iframe 
 src= "https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?><?php echo $embeddedCode; ?>"></iframe>
 
 </div>
+</div>
 
-</body>
+<!--</body>-->
 
 <footer>
 <div class="col" id="firstfootercolumn">
@@ -124,13 +125,13 @@ src= "https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?><?php ec
 <div class="col" id = "image">
   <h2>You can find us on:</h2>
   <ul>
-    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="30px" height="30px"></a></li>
-    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="30px" height= "30px"></a></li>
-    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="30px" height= "30px"></a></li>
-    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="30px" height= "30px"></a></li>
+    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="30" height="30" alt="facebook"></a></li>
+    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="30" height= "30" alt="linkdin"></a></li>
+    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="30" height= "30" alt="instagram"></a></li>
+    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="30" height= "30" alt="twitter"></a></li>
   </ul>
 </div>
 </footer>
-
+</body>
 
 </html>

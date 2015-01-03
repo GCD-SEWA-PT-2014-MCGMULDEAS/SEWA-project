@@ -199,12 +199,13 @@ textarea{
 
 footer {
 	margin-top:35%;
+  padding-top: 120px;
 	color:#ededed;
   	font-size: 12pt;
 	left:5px;
 	min-width:100%;
     max-width:100%;
-    height:25%;
+    height:35%;
     background-color:#303030;
 }
 
