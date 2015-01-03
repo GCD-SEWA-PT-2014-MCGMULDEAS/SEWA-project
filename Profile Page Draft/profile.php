@@ -95,7 +95,7 @@ $RowM10 = mysqli_fetch_row($outputM10);
 <title> Profile page</title>
   <meta charset="UTF-8">
   <script type="text/javascript" src="jscharts.js"></script>
-  <link rel="stylesheet" type="text/css" href="draftprofilestyle.css"/>
+  <link rel="stylesheet" type="text/css" href="profilestyle.css"/>
 </head>
 <body>
 

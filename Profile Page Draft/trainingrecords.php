@@ -66,7 +66,7 @@ Training Records<br/>
 
 <div id = "leftcolumn">
 <br/>
-<a href="./draftprofile.php">Profile</a><br/><br/>
+<a href="./profile.php">Profile</a><br/><br/>
 <a href="./matchrecords.php">Your Match Records</a><br/><br/>
 <a href="./updatedetails.php">Update User Details</a>
 </div>
