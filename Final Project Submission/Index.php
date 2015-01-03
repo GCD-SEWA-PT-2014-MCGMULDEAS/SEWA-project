@@ -30,13 +30,13 @@
 
 	// images placed here in the array
 	var items = new Array();
-	items[0]="<a href='link.htm' ><img alt='sprint picture' src=' largeImages/sprint1a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
-	items[1]="<a href='link.htm'><img alt='image1 (9K)' src='largeImages/run2a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
-	items[2]="<a href='link.htm'><img alt='image2 (9K)' src='largeImages/cp3a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
-	items[3]="<a href='link.htm'><img alt='image3 (9K)' src='largeImages/strength1a.jpg' height='400' width='64%' border='' /></a>"; //a linked image
-	items[4]="<a href='link.htm'><img alt='image4 (9K)' src='largeImages/kickera.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
+	items[0]="<a href='link.htm' ><img alt='sprint picture' src='./Images/sprint1a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
+	items[1]="<a href='link.htm'><img alt='image1 (9K)' src='./Images/run2a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
+	items[2]="<a href='link.htm'><img alt='image2 (9K)' src='./Images/cp3a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
+	items[3]="<a href='link.htm'><img alt='image3 (9K)' src='./Images/strength1a.jpg' height='400' width='64%' border='' /></a>"; //a linked image
+	items[4]="<a href='link.htm'><img alt='image4 (9K)' src='./Images/kickera.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
 	
-	items[5]="<a href='link.htm'><img alt='image5 (18K)' src='largeImages/WORDLE.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
+	items[5]="<a href='link.htm'><img alt='image5 (18K)' src='./Images/WORDLE.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
 	
 
 	function rotater() {
@@ -72,7 +72,7 @@ Gavs css ? Section for login and logo in header
 -->
   <div id="header" class="wrap">
 
-      <img src ="largeImages/Logobevil.jpg" alt = "LOGO">
+      <img src ="./Images/logo.jpg" alt = "Logo">
   <div class="menu-wrap">
       <nav class="menu">
           <ul class="clearfix">
@@ -177,7 +177,7 @@ Section with the body text for the main page
 <div class="page-wrap" id="page-wrap">
   
  <h1 id = "comp">Be Competitive</h1>
- <p class = 'right'><img src="largeImages/jump.jpg" alt="Jump">
+ <p class = 'right'><img src="./Images/jump.jpg" alt="Jump">
  Sport has always been competitive and as teams and individuals look to find that competitive edge optimal use of time and technology can make sure you are the best that you can be. Training alone can be challenging but setting goals and knowing the targets your competitors are aiming for and achieving can help focus the mind and body.<br/>
 
 <br/>
@@ -185,7 +185,7 @@ Section with the body text for the main page
  GFC Stats is all about you. Much of the information available on the site is public knowledge, though not always easy to find. In recent years a lot of effort and investment has gone in to analysing what works and what doesn’t. Although the results don’t produce a revolutionary short cut to success, what they do is produce a template for a quicker path to success. Thus template enables you to focus on those areas of your game that need improving to achieve even better results.</p>
 
   <h1 id= "analyse" style = "text-align:center">Analyse yourself</h1>
-  <p class="left"><img style="float:left" src="largeImages/compare.jpg" alt="compare"> 
+  <p class="left"><img style="float:left" src="./Images/compare.jpg" alt="compare"> 
   Each week you can build up a record of the training you have done, the goals you have achieved and the targets you want to pass. Your input can be compared with those of your peers, those of the elite players and against averages compiled  over time. By including your match facts you will be able to not only compare yourself to these other players but you can determine the relevant improvements in performance over time and how these translate to key performance indicators in matches.</p>
  
   <p class="right"> These show areas where improvement is quite achievable with the correct training. The key areas of focus are Strength, Speed/Agility, Fitness and Flexibility when it comes to the non- skills element of training. These are all areas that you can work on in your own time alone or with friends. Keeping of records of what is achieved is key to determining the effectiveness and future direction of your training. </p>
@@ -230,10 +230,10 @@ Footer details here
 <div class="col" id = "image">
   <h2>You can find us on:</h2>
   <ul>
-    <li><a href="#facebook"><img style="float:left" src="largeImages/facebook.png" width="50" height="50" alt="facebook"></a></li>
-    <li><a href="#linkedin"><img style="float:left" src="largeImages/linkedin.jpg" width="50" height= "50" alt="linkdin"></a></li>
-    <li><a href="#instagram"><img style="float:left" src="largeImages/instagram.png" width="50" height= "50" alt="instagram"></a></li>
-    <li><a href="#twitter"><img style="float:left" src="largeImages/twitter.png" width="50" height= "50" alt="twitter"></a></li>
+    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="50" height="50" alt="facebook"></a></li>
+    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="50" height= "50" alt="linkdin"></a></li>
+    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="50" height= "50" alt="instagram"></a></li>
+    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="50" height= "50" alt="twitter"></a></li>
   </ul>
 </div>
 </footer>

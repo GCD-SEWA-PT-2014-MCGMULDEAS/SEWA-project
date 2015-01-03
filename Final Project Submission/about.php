@@ -16,7 +16,7 @@ Gavs css ? Section for login and logo in header
 
 	 <div id="header" class="wrap">
 
-        <img class = 'logo' src ="largeImages/Logobevil.jpg" alt = "LOGO" height = '100' >
+        <img class = 'logo' src ="./Images/logo.jpg" alt = "Logo" height = '100' >
 
 	</div>
 <div class="menu-wrap">
@@ -67,13 +67,13 @@ Section with the body text for the main page
   <div class="page-wrap" id="page-wrap">
   
     <h1 id="who">Who we are</h1>
-    <p class = 'right' style="margin-left:20px"><img src="largeImages/analystsgroup.jpg" height="150" alt="analystgroup"> 
+    <p class = 'right' style="margin-left:20px"><img src="./Images/analystsgroup.jpg" height="150" alt="analystgroup"> 
  
  GFC-STATS.com is a group project run as part of a submission for a course in Software Engineering for Web Applications in Griffith College Dublin. The team of Cathal, Gavin and Frank have developed the concept to complement the growing number of sites dedicated to sports analysis and GAA sports in particular. The site will evolve as more data becomes available and more in depth comparisons can be made.</p>
 <br/>
 
   <h1 id="how">How it works </h1>
-  <p class = 'left'><img style="float:left" src="largeImages/register.jpg" height="150" alt="register">  
+  <p class = 'left'><img style="float:left" src="./Images/register.jpg" height="150" alt="register">  
 
 To gain access to the analysis section a user must login and register on the site. Once registration is completed, an option is available to input personal data on training and matches based on individual dates. Thus a user can maintain a comprehensive record of their training activities and match performance indicators over time, enablisng them to identify and focus on training activities that will enhance their overall performance.</p>
 
@@ -82,7 +82,7 @@ To gain access to the analysis section a user must login and register on the sit
 <br/>
 
   <h1 style = "text-align:center"><a name = "analyse">Analysing your Activities</a></h1>
-  <p class="right"><img style="float:right" src="largeImages/form1.png" width="230" alt="form1"> 
+  <p class="right"><img style="float:right" src="./Images/form1.png" width="230" alt="form1"> 
 
 Keeping a record of your training and match performances is key to getting the most out of the website. There are a number of ways that you can record this information from basic forms to various apps and software packages. We have incldued a basic form that you can download and copy to keep track, though for matches we would recommend a friend or coach records the data for accuracy purposes.</p>
  
@@ -139,10 +139,10 @@ Footer details here
   <h2>You can find us on:</h2>
   <ul>
   <!--<span id = "image">-->
-    <li><a href="#facebook"><img style="float:left" src="largeImages/facebook.png" width="50" height="50" alt="facebook"></a></li>
-    <li><a href="#linkedin"><img style="float:left" src="largeImages/linkedin.jpg" width="50" height= "50" alt="linkdin"></a></li>
-    <li><a href="#instagram"><img style="float:left" src="largeImages/instagram.png" width="50" height= "50" alt="instagram"></a></li>
-    <li><a href="#twitter"><img style="float:left" src="largeImages/twitter.png" width="50" height= "50" alt="twitter"></a></li>
+    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="50" height="50" alt="facebook"></a></li>
+    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="50" height= "50" alt="linkdin"></a></li>
+    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="50" height= "50" alt="instagram"></a></li>
+    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="50" height= "50" alt="twitter"></a></li>
   <!--</span>-->
   </ul>
 </div>
