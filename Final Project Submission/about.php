@@ -52,7 +52,7 @@ Gavs css ? Section for login and logo in header
            <li>
               <a href="#">Analysis<span class="arrow">&#9660;</span></a>
               <ul class="sub-menu">
-                  <li><a href="login.php">Register</a></li>
+                  <li><a href="register.php">Register</a></li>
                   <li><a href="login.php">Profile</a></li>
               </ul>
               <li><a href = "./login.php">Login</a></li>
@@ -66,13 +66,13 @@ Section with the body text for the main page
 <section>
   <div class="page-wrap" id="page-wrap">
   
-    <h1><a name = "who">Who we are</a></h1>
+    <h1 id="who">Who we are</h1>
     <p class = 'right' style="margin-left:20px"><img src="largeImages/analystsgroup.jpg" height="150px"> 
  
  GFC-STATS.com is a group project run as part of a submission for a course in Software Engineering for Web Applications in Griffith College Dublin. The team of Cathal, Gavin and Frank have developed the concept to complement the growing number of sites dedicated to sports analysis and GAA sports in particular. The site will evolve as more data becomes available and more in depth comparisons can be made.</p>
 </br>
 
-  <h1><a name = "how">How it works </a></h1>
+  <h1 id="how">How it works </h1>
   <p class = 'left'><img style="float:left" src="largeImages/register.jpg" height="150px">  
 
 To gain access to the analysis section a user must login and register on the site. Once registration is completed, an option is available to input personal data on training and matches based on individual dates. Thus a user can maintain a comprehensive record of their training activities and match performance indicators over time, enablisng them to identify and focus on training activities that will enhance their overall performance.</p>
@@ -88,7 +88,7 @@ Keeping a record of your training and match performances is key to getting the m
  
  </br>
 
-  <h1 style = "text-align:center"><a name = "res">Resources</a></style></h1>
+  <h1 id = "res" style = "text-align:center">Resources</style></h1>
   <p class="right"> Below is a list of resources that can help you improve specific parts of your training and performance on the pitch. They include some downloadable pdfs and short videos.</p>
 
     <ul><h2>Skills Training</h2>
@@ -103,7 +103,7 @@ Keeping a record of your training and match performances is key to getting the m
     </ul>
 
     <ul><h2>Speed Training</h2>
-      <li> Video 1 - 3 tips for Better Speed
+      <li> Video: 3 tips for Better Speed</li>
       <iframe width="300" height="200" src="https://www.youtube.com/embed/irXQFyJXWc4" frameborder="0" allowfullscreen></iframe>
     </ul>
 

@@ -176,7 +176,7 @@ Section with the body text for the main page
 <section>
 <div class="page-wrap" id="page-wrap">
   
- <a name = "comp"><h1>Be Competitive</h1></a>
+ <h1 id = "comp">Be Competitive</h1>
  <p class = 'right'><img src="largeImages/jump.jpg" height="10%">
  Sport has always been competitive and as teams and individuals look to find that competitive edge optimal use of time and technology can make sure you are the best that you can be. Training alone can be challenging but setting goals and knowing the targets your competitors are aiming for and achieving can help focus the mind and body.</br>
 
@@ -184,7 +184,7 @@ Section with the body text for the main page
 
  GFC Stats is all about you. Much of the information available on the site is public knowledge, though not always easy to find. In recent years a lot of effort and investment has gone in to analysing what works and what doesn’t. Although the results don’t produce a revolutionary short cut to success, what they do is produce a template for a quicker path to success. Thus template enables you to focus on those areas of your game that need improving to achieve even better results.</p>
 
-  <a name = "analyse"><h1 style = "text-align:center">Analyse yourself</style></h1></a>
+  <h1 id= "analyse" style = "text-align:center">Analyse yourself</style></h1>
   <p class="left"><img style="float:left" src="largeImages/compare.jpg" height="10%"> 
   Each week you can build up a record of the training you have done, the goals you have achieved and the targets you want to pass. Your input can be compared with those of your peers, those of the elite players and against averages compiled  over time. By including your match facts you will be able to not only compare yourself to these other players but you can determine the relevant improvements in performance over time and how these translate to key performance indicators in matches.</p>
  
@@ -192,8 +192,8 @@ Section with the body text for the main page
  
  </br>
 
-  <h1>Facts to challenge you</h1>
-  <a name = "fact"></a>
+  <h1 id="fact">Facts to challenge you</h1>
+  
 	<ul>
 		<li> The average GAA player will travel between 7-10,000ms per match. A soccer player would run between 9-12,000m. </li>
 		<li> The average GAA player sprints around 33km/hr compared to Usain Bolt who will sprints at 38km/hr.</li>

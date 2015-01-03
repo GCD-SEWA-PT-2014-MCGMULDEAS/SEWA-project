@@ -344,8 +344,8 @@ footer. {
   
 }
 iframe{
-	float:right;
-	padding-bottom: 100px;
+	float:center;
+	padding-bottom: 7px;
 }
 .col { 
   /*background: #0a5173;*/
