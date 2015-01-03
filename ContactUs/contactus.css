@@ -1,0 +1,148 @@
+body{
+	background-color: #303030;
+	color: #919191;
+	width:100%;
+	overflow: scroll;
+}
+
+#mainbody{
+	left:0px;
+	margin-top:6%;
+	width:100%;
+	position:absolute;
+	color:black;
+	font-size:12pt;
+	font-weight: bold;
+	height:75%;
+	margin-bottom: 0%;
+	background-color:#ededed;
+}
+
+#leftcenter{
+	padding-top: 1%;
+	margin-left:8%;
+	width:45%;
+	position:absolute;
+	margin-right:50%;
+	font-size:12pt;
+	height:90%;
+}
+
+#address{
+	font-weight:normal;
+	font-style:italic;
+}
+
+#rightcenter{
+	padding-top: 1%;
+	margin-left:45%;
+	margin-right:8%;
+	width:55%;
+	position:absolute;
+	font-size:12pt;
+	height:95%;
+}
+
+/*and, we make the position absolute and put width and height to 0 of the iframe. If we fail to enter position:absolute; the iframe height will be restricted for IE, Chrome, etc. */
+iframe{
+	position:absolute;
+	width: 90%;
+	height: 90%;
+}
+
+header, .menu{
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 15%;
+	background-color:#303030;
+	position:fixed;
+}
+
+.forminline{
+	display:inline;
+}
+
+input[type = "textbox"]{
+
+	width: 250px;
+	height: 20px;
+ 	border: 1px solid;
+    border-radius: 7px;
+
+}
+
+textarea{
+ 	border: 1px solid;
+    border-radius: 7px;
+}
+
+site-footer, .page-wrap:after {
+  height: 142px;
+  float:center; 
+  margin-left: 10%;
+  width:90%;
+}
+
+footer {
+	margin-top:35%;
+	color:#ededed;
+  	font-size: 10pt;
+  	/*bottom:0px;*/
+	left:5px;
+	min-width:100%;
+    max-width:100%;
+    height:40%;
+    background-color:#303030;
+}
+
+.col { 
+  float: left;
+  padding: 20px 0 0 35px;
+  width: 30%
+}
+ 
+.col:first-child {
+  padding: 30px 0 0 0;
+}
+ 
+.col h2 { 
+  color: #ededed;
+  float: center; 
+  font-variant: small-caps; 
+  margin: 0 0 20px 0; 
+  padding: 9px 0 0 19px; 
+  height: inherit; 
+  width: 291px;
+}
+
+#minorlinks{
+	font-variant: small-caps; 
+  margin: 0 0 20px 0; 
+  padding: 9px 0 0 19px; 
+  height: inherit; 
+  width: 291px;
+}
+ 
+.col ul { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+}
+ 
+.col li { 
+ 
+  float: center; 
+  height: inherit; 
+  margin: 3px 20px;
+  padding: 0; 
+  color: #ededed;
+}
+ 
+.col li a { 
+  color: #ededed;
+  display: block;
+  float: left;  
+  padding: 10px 0 0 19px; 
+  text-decoration: underline;
+}
