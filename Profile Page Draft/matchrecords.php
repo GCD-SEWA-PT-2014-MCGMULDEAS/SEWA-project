@@ -39,17 +39,17 @@ $RowMA1 = mysqli_fetch_row($outputMatch);
 </head>
 <body>
 
-<header>Match Records<br/>
-
-<a href="./draftprofile.php">Profile</a>
-<a href="./trainingrecords.php">Your Training Records</a>
-<a href="./updatedetails.php">Update User Details</a>
-<a href="./logout.php">Logout</a>
+<header>
+<img id="LineImage" src="./LineImage.png" alt="Line Chart" />
+<img id="BarImage" src="./BarImage.png" alt="Bar Chart" />
+<a id="LogoutButton" href="./logout.php">Logout</a>
+<img id="WebImage" src="./logo.jpg" alt="GFC Logo" /><br/>
+Match Records<br/>
 </header>
 
 <div id = "leftcolumn">
 <br/>
-<a href="./draftprofile.php">Profile</a><br/><br/>
+<a href="./profile.php">Profile</a><br/><br/>
 <a href="./trainingrecords.php">Your Training Records</a><br/><br/>
 <a href="./updatedetails.php">Update User Details</a>
 </div>
@@ -89,8 +89,8 @@ echo "<td>{$RowMA1[5]}</td>";
 echo "<td>{$RowMA1[9]}</td>";
 echo "<td>{$RowMA1[12]}</td>";
 echo "<td>{$RowMA1[13]}</td>";
-echo "<td>{$RowMA1[16]}</td>";
-echo "<td>{$RowMA1[17]}</td></tr>";
+echo "<td>{$RowMA1[17]}</td>";
+echo "<td>{$RowMA1[18]}</td></tr>";
 $RowMA1 = mysqli_fetch_row($outputMatch);
 } while ($RowMA1);  
 

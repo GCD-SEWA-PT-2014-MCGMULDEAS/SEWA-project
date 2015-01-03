@@ -95,17 +95,17 @@ $RowM10 = mysqli_fetch_row($outputM10);
 <title> Profile page</title>
   <meta charset="UTF-8">
   <script type="text/javascript" src="jscharts.js"></script>
-  <link rel="stylesheet" type="text/css" href="draftprofilestyle.css"/>
+  <link rel="stylesheet" type="text/css" href="profilestyle.css"/>
 </head>
 <body>
 
 
-<header>Player Profile<br/>
-
-<a href="./trainingrecords.php">Your Training Records</a>
-<a href="./matchrecords.php">Your Match Records</a>
-<a href="./updatedetails.php">Update User Details</a>
-<a href="./logout.php">Logout</a>
+<header>
+<img id="LineImage" src="./LineImage.png" alt="Line Chart" />
+<img id="BarImage" src="./BarImage.png" alt="Bar Chart" />
+<a id="LogoutButton" href="./logout.php">Logout</a>
+<img id="WebImage" src="./logo.jpg" alt="GFC Logo" /><br/>
+Player Profile<br/>
 </header>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------>
@@ -301,7 +301,12 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   $passesComplete = $_POST['passes-complete'];
   $passesIncomplete = $_POST['passes-incomplete'];
   $passCompletionPercentage = ROUND(($passesComplete / ($passesComplete + $passesIncomplete))*100);
-  $attempts = $_POST['attempts'];
+   
+   if($_POST['attempts']== 0){
+	$attempts = 1; /* - To avoid "Divide By Zero Error" */
+	} else
+	 $attempts = $_POST['attempts'];
+	 
   $goals = $_POST['goals'];
   $points = $_POST['points'];
   $shotSuccessPercentage = ROUND((($goals + $points) / $attempts)*100);

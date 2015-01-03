@@ -40,17 +40,17 @@ $county = mysqli_fetch_row($countyQueryOutput);
 </head>
 <body>
 
-<header>Update Details<br/>
-
-<a href="./draftprofile.php">Profile</a>
-<a href="./trainingrecords.php">Your Training Records</a>
-<a href="./matchrecords.php">Your Match Records</a>
-<a href="./logout.php">Logout</a>
+<header>
+<img id="LineImage" src="./LineImage.png" alt="Line Chart" />
+<img id="BarImage" src="./BarImage.png" alt="Bar Chart" />
+<a id="LogoutButton" href="./logout.php">Logout</a>
+<img id="WebImage" src="./logo.jpg" alt="GFC Logo" /><br/>
+Update Details<br/>
 </header>
 
 <div id = "leftcolumn">
 <br/>
-<a href="./draftprofile.php">Profile</a><br/><br/>
+<a href="./profile.php">Profile</a><br/><br/>
 <a href="./trainingrecords.php">Your Training Records</a><br/><br/>
 <a href="./matchrecords.php">Your Match Records</a>
 </div>
