@@ -301,7 +301,12 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   $passesComplete = $_POST['passes-complete'];
   $passesIncomplete = $_POST['passes-incomplete'];
   $passCompletionPercentage = ROUND(($passesComplete / ($passesComplete + $passesIncomplete))*100);
-  $attempts = $_POST['attempts'];
+   
+   if($_POST['attempts']== 0){
+	$attempts = 1; /* - To avoid "Divide By Zero Error" */
+	} else
+	 $attempts = $_POST['attempts'];
+	 
   $goals = $_POST['goals'];
   $points = $_POST['points'];
   $shotSuccessPercentage = ROUND((($goals + $points) / $attempts)*100);
