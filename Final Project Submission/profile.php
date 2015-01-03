@@ -143,7 +143,7 @@ How would you like to compare your details: <input type="radio" name="training-c
 <input type="radio" name="training-comparison" value = "1" /><b>Position</b><br/><br/>
 Would you like to save these details?<input type="checkbox" name="database-save" value="database-save"><br/><br/>
 <!--Evaluate Button -->
-<input type="submit" onSubmit="validateTrainingForm(this)" name="Evaluate" value="Evaluate Training Performance">
+<input type="submit" onSubmit="validateTrainingForm(this)" name="Evaluate" value="Evaluate Training Performance"><br/><br/>
 </form>
 
 <?php
@@ -268,7 +268,7 @@ How would you like to compare your details: <input type="radio" name="match-comp
 Would you like to save these details?<input type="checkbox" name="database-save2" value="database-save2"><br/><br/>
 
 <!--Evaluate Button -->
-<input type="submit" name="Evaluate" value="Evaluate Match Performance">
+<input type="submit" name="Evaluate" value="Evaluate Match Performance"><br/><br/>
 </form>
 
 
@@ -399,12 +399,6 @@ County: <?php echo $county[0]; ?><br/><br/>
 
 Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
-
-
-<!--<footer>
-    Registered to GFC
-</footer>-->
-
 
 </body>
 

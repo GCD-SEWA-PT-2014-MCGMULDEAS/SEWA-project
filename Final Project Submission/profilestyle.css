@@ -60,7 +60,7 @@ input[type=text], input[type=date], select {
 
 #leftcolumn{
 	background-color:#EBEBE0;
-	margin-top:8%;
+	margin-top:8.5%;
 	margin-left:2px;
 	margin-right:5px;
 	float:left;
@@ -108,7 +108,7 @@ table{
 
 #rightcolumn{
 	background-color:#EBEBE0;
-	margin-top:8%;
+	margin-top:8.5%;
 	margin-left:2px;
 	margin-right:2px;
 	float:right;
@@ -138,7 +138,7 @@ header{
 	font-size:18pt;
 	font-style:none;
 	text-align:center;
-	height:15%;
+	height:16%;
 	background-color:#EBEBE0;
 	box-shadow: 0px 0px 1px 1px;
 }
