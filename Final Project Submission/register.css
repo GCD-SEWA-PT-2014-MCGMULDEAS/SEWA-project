@@ -1,0 +1,56 @@
+
+label {
+	float: left; 
+	width: 170px;
+	margin-bottom: 2px;
+	
+}
+
+body{
+
+	margin-top: 10%;
+	margin-left:34%;
+	font-size: 12pt;
+	font-weight: inherit;
+	/*color:#ededed;*/
+	background-color: #303030;
+
+}
+
+
+
+input[type = "text"], [type = "password"], [type = "date"], select, [type = "submit"]{
+
+ 	border: 1px solid;
+ 	padding: 4px;
+    border-radius: 6px;
+    margin-bottom: 2px;
+
+}
+
+input[type = "submit"]{
+
+ 	border: 1px solid;
+ 	padding: 4px;
+ 	padding-left: 15px;
+ 	padding-right: 15px;
+    border-radius: 6px;
+    margin-top: 7px;
+    margin-left: 36%;
+
+}
+
+#content {
+  width: 400px;
+  height: 400px;
+  padding: 5%;
+  margin-top: -10px;
+  position:relative;
+  background-color: #ededed;
+}
+
+h1{
+
+text-align: center;
+
+}
