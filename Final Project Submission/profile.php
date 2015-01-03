@@ -189,7 +189,7 @@ Would you like to save these details?<input type="checkbox" name="database-save"
     <td>{$fitnessLength}</td>
     <td>{$gymLength}</td>
     <td>{$recoveryLength}</td>";
-    echo "<tr><td>Comparison</td><td>" . ROUND(($skillsLength/$RowT5[0])*100) . "%</td><td>" . ROUND(($skillsLength/$RowT6[0])*100) . "%</td><td>" . ROUND(($skillsLength/$RowT7[0])*100) . "%</td><td>" . ROUND(($skillsLength/$RowT8[0])*100) . "%</td></tr>";
+    echo "<tr><td>Comparison</td><td>" . ROUND(($skillsLength/$RowT5[0])*100) . "%</td><td>" . ROUND(($fitnessLength/$RowT6[0])*100) . "%</td><td>" . ROUND(($gymLength/$RowT7[0])*100) . "%</td><td>" . ROUND(($recoveryLength/$RowT8[0])*100) . "%</td></tr>";
     echo "</table><br/><br/><br/>";
 }?>
 
