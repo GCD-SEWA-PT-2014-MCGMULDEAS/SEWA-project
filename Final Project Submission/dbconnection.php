@@ -6,13 +6,13 @@ $database = "gaaplayerdatabase";
 $connection = mysqli_connect($host,$user,$pass);
 ?>
 
-<html>
+<!--<html>
 <head>
 <title> Sample of SQL Printing out page</title>
   <meta charset="UTF-8">
   <script type="text/javascript" src="jscharts.js"></script>
 </head>
-<body>
+<body>-->
 
 <?php
 if (!$connection){
@@ -25,5 +25,5 @@ if (!$connection){
 	}
 
 ?>
-</body>
-</html>
+<!--</body>
+</html>-->
