@@ -54,10 +54,10 @@
 			<label>County:</label><input type = "text" name = "county" id = "county" required/><br/>
 			<label>Position:</label><select id = "position" name = "position" required>
 			<option value = "">-</option>
-			<option value = "GOALKEEPER">Goalkeeper</option>
-			<option value = "DEFENDER">Defender</option>
-			<option value = "MIDFIELDER">Midfielder</option>
-			<option value = "FORWARD">Forward</option></select><br/>
+			<option value = "Goalkeeper">Goalkeeper</option>
+			<option value = "Defender">Defender</option>
+			<option value = "Midfielder">Midfielder</option>
+			<option value = "Forward">Forward</option></select><br/>
 			<input type = "submit" name = "submit" value = "Register"/>
 
 	</form>
