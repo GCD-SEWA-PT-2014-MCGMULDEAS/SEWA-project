@@ -179,12 +179,12 @@ iframe{
 }
 
 /*Asterisk colour*/
-#asterisk{
+.asterisk{
 	color:red;
 }
 
 /*text box input fields */
-input[type = "textbox"]{
+input[type = "text"]{
 	width: 250px;
 	height: 20px;
  	border: 1px solid;
@@ -229,7 +229,7 @@ footer {
   width: 291px;
 }
 
-#minorlinks{
+.minorlinks{
   font-variant: small-caps;
   padding: 9px 0 0 19px; 
   height: inherit; 

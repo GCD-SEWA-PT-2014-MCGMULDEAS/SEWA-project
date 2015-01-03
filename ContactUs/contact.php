@@ -80,10 +80,10 @@
 <div id = "leftcenter">
 <div class = "forminline">
 <form name = "email" method = "POST" action = "sendmail.php" onSubmit = "return validateForm();">
-Name<span id="asterisk">*</span><br \><input type = "textbox" name = "name"><br/>
-Email<span id="asterisk">*</span><br \><input type = "textbox" name = "email"><br/>
-Subject<span id="asterisk">*</span><br \><input type = "textbox" name = "subject"><br/>
-Message<span id="asterisk">*</span><br \><textarea name = "message" rows = "10" cols = "50"></textarea><br/>
+Name<span class="asterisk">*</span><br/><input type = "text" name = "name"><br/>
+Email<span class="asterisk">*</span><br/><input type = "text" name = "email"><br/>
+Subject<span class="asterisk">*</span><br/><input type = "text" name = "subject"><br/>
+Message<span class="asterisk">*</span><br/><textarea name = "message" rows = "10" cols = "50"></textarea><br/>
 <input type = "submit" name = "submit" value = "Submit Form"/><br/><br/>
 </form>
 </div>
@@ -107,9 +107,9 @@ src= "https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?><?php ec
 <footer>
 <div class="col" id="firstfootercolumn">
   <h2>Sample links</h2>
- <span id = "minorlinks"><a href="#">Terms & Conditions</a><br/></span>
-  <span id = "minorlinks"><a href="#">Sitemap</a><br/></span>
-  <span id = "minorlinks"><a href="#">Useful links</a><br/></span>
+ <span class = "minorlinks"><a href="#">Terms & Conditions</a><br/></span>
+  <span class = "minorlinks"><a href="#">Sitemap</a><br/></span>
+  <span class = "minorlinks"><a href="#">Useful links</a><br/></span>
   </div>
 
 <div class="col">
