@@ -39,12 +39,12 @@ $RowMA1 = mysqli_fetch_row($outputMatch);
 </head>
 <body>
 
-<header>Match Records<br/>
-
-<a href="./draftprofile.php">Profile</a>
-<a href="./trainingrecords.php">Your Training Records</a>
-<a href="./updatedetails.php">Update User Details</a>
-<a href="./logout.php">Logout</a>
+<header>
+<img id="LineImage" src="./LineImage.png" alt="Line Chart" />
+<img id="BarImage" src="./BarImage.png" alt="Bar Chart" />
+<a id="LogoutButton" href="./logout.php">Logout</a>
+<img id="WebImage" src="./logo.jpg" alt="GFC Logo" /><br/>
+Match Records<br/>
 </header>
 
 <div id = "leftcolumn">

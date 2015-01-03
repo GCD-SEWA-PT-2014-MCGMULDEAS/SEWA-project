@@ -56,12 +56,12 @@ $avgRecovery = mysqli_fetch_row($avgRecoveryOutput);
   <link rel="stylesheet" type="text/css" href="recordsstyle.css"/>
 </head>
 <body>
-<header>Training Records<br/>
-
-<a href="./draftprofile.php">Profile</a>
-<a href="./matchrecords.php">Your Match Records</a>
-<a href="./updatedetails.php">Update User Details</a>
-<a href="./logout.php">Logout</a>
+<header>
+<img id="LineImage" src="./LineImage.png" alt="Line Chart" />
+<img id="BarImage" src="./BarImage.png" alt="Bar Chart" />
+<a id="LogoutButton" href="./logout.php">Logout</a>
+<img id="WebImage" src="./logo.jpg" alt="GFC Logo" /><br/>
+Training Records<br/>
 </header>
 
 <div id = "leftcolumn">
