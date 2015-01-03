@@ -33,7 +33,7 @@
 	items[0]="<a href='link.htm' ><img alt='sprint picture' src='./Images/sprint1a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
 	items[1]="<a href='link.htm'><img alt='image1 (9K)' src='./Images/run2a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
 	items[2]="<a href='link.htm'><img alt='image2 (9K)' src='./Images/cp3a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
-	items[3]="<a href='link.htm'><img alt='image3 (9K)' src='./Images/strength1a.jpg' height='400' width='64%' border='' /></a>"; //a linked image
+	items[3]="<a href='link.htm'><img alt='image3 (9K)' src='./Images/strength1a.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
 	items[4]="<a href='link.htm'><img alt='image4 (9K)' src='./Images/kickera.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
 	
 	items[5]="<a href='link.htm'><img alt='image5 (18K)' src='./Images/WORDLE.jpg' height='400' width='64%' border='0' /></a>"; //a linked image
