@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>GFC STATS.COM</title>
-  <link rel = "stylesheet" type="text/css" href="index2.css" />
+  <link rel = "stylesheet" type="text/css" href="index.css" />
 </head>
 
 
