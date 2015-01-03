@@ -89,8 +89,8 @@ echo "<td>{$RowMA1[5]}</td>";
 echo "<td>{$RowMA1[9]}</td>";
 echo "<td>{$RowMA1[12]}</td>";
 echo "<td>{$RowMA1[13]}</td>";
-echo "<td>{$RowMA1[16]}</td>";
-echo "<td>{$RowMA1[17]}</td></tr>";
+echo "<td>{$RowMA1[17]}</td>";
+echo "<td>{$RowMA1[18]}</td></tr>";
 $RowMA1 = mysqli_fetch_row($outputMatch);
 } while ($RowMA1);  
 
