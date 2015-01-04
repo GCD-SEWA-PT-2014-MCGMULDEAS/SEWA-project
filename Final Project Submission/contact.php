@@ -23,7 +23,7 @@
 </script>
 <title>Contact Us</title>
   <meta charset="UTF-8">
- <link rel="stylesheet" type="text/css" href="contactus.css"/>
+ <link rel="stylesheet" type="text/css" href="indexcontact.css"/>
 </head>
 <body>
 
@@ -74,7 +74,7 @@
       </nav>
   </div>
   </header>
-
+<section>
 <div id = "mainbody">
 
 <div id = "leftcenter">
@@ -102,7 +102,7 @@ src= "https://www.google.com/maps/embed/v1/place?key=<?php echo $key; ?><?php ec
 
 </div>
 </div>
-
+</section>
 <!--</body>-->
 
 <footer>
