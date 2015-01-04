@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "root";//you'll have to enter your own passwords on local PC here.
-$pass = ""; //you'll have to enter your own passwords on local PC here.
-$database = "gaaplayerdatabase";
+$user = "gfc";//you'll have to enter your own passwords on local PC here.
+$pass = "o7akndo2iqpz"; //you'll have to enter your own passwords on local PC here.
+$database = "gfc_gaaplayerdatabase";
 $connection = mysqli_connect($host,$user,$pass);
 
 if (!$connection){
