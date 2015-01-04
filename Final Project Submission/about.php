@@ -89,11 +89,11 @@ Keeping a record of your training and match performances is key to getting the m
 
     <h2>Skills Training</h2>
     <ul>
-      <li><a href="/SkillsForms/solo.pdf">Solo drill</a></li>
-      <li><a href="/SkillsForms/Punt_Kick.pdf">Kicking drill</a></li>
-      <li><a href="/SkillsForms/High_Catch.pdf">Catching drill</a></li>
-      <li><a href="/SkillsForms/Hand_Pass.pdf">Passing drill</a></li>
-      <li><a href="/SkillsForms/Block_down.pdf">Blocking drill</a></li>
+      <li><a href="./solo.pdf">Solo drill</a></li>
+      <li><a href="">Kicking drill(pdf not attached given size)</a></li>
+      <li><a href="">Catching drill(pdf not attached given size)</a></li>
+      <li><a href="">Passing drill(pdf not attached given size)</a></li>
+      <li><a href="">Blocking drill(pdf not attached given size)</a></li>
     </ul>
     <h2>Strength Training</h2>
     <ul>
