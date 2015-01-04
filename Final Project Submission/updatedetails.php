@@ -79,20 +79,20 @@ Position: <?php echo $position[0]; ?> <br/><br/>
 
 <form method="POST" action = "./testupdate.php">
 <h1>Your Details:</h1><br/>
-<label for="name">Name:</label><?php echo $name[0]; ?><br/><br/><!--<input type="text" class = "textboxes" name="name" value = "name" required><br/><br/>-->
+<label for="name">Name:</label><?php echo $name[0]; ?><br/><br/>
 <label for="email">Enter an email address:</label> <input type = "text" name = "email" id = "email" required value="<?php echo $email[0]; ?>"/><br/><br/>
 <label for="gender">Gender:</label>  <select id = "gender"  name = "gender">
 <option value = "M">Male</option>
 <option value = "F">Female</option></select><br/><br/>
-<label for="dob">Date of Birth:</label>  <input type="date" name="dob" value = "dob" required value="<?php echo $dob[0]; ?>"><br/><br/>
+<label for="dob">Date of Birth:</label>  <input type="date" name="dob" value = "dob" required value="<?php echo $dob[0]; ?>"><br/><br/><br/>
 <label for="height">Height(Meters):</label> <input type = "text" name = "height" id = "height" required value="<?php echo $height[0]; ?>"/><br/><br/>
 <label for="club">Club:</label> <input type = "text" name = "club" id = "club" required value="<?php echo $club[0]; ?>"/><br/><br/>
 <label for="county">County:</label> <input type = "text" name = "county" id = "county" required value="<?php echo $county[0]; ?>"/><br/><br/>
 <label for="position">Position:</label> <select id = "position" name = "position" required>
-<option value = "GOALKEEPER">Goalkeeper</option>
-<option value = "DEFENDER">Defender</option>
-<option value = "MIDFIELDER">Midfielder</option>
-<option value = "FORWARD">Forward</option></select><br/><br/>
+<option value = "Goalkeeper">Goalkeeper</option>
+<option value = "Defender">Defender</option>
+<option value = "Midfielder">Midfielder</option>
+<option value = "Forward">Forward</option></select><br/><br/>
 <input type="submit" name="Save" value="Update Details">
 </form>
 
