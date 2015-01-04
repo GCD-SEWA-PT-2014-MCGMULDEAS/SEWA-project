@@ -110,6 +110,7 @@ input[type=text], input[type=date], select {
 	margin-right:15%;
 	font-size:8pt;
 	height:100%;
+	padding-top: 3%;
 }
 
 #centerleft{
@@ -153,6 +154,4 @@ a{
 a:hover, a:active{
 	background-color:white;
 }
-
-
 
