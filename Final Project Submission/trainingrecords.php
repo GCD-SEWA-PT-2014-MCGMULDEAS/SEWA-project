@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <?php
-include './dbconnection.php';
-?>
-
-<?php 
-
 @session_start();
+include './dbconnection.php';
+/*training records page where users can view the training data they have entered in table and pie chart(average in JS Charts format)*/
+
+/*user's base data for rigth columns */
+$nameQuery = "SELECT name FROM userpass WHERE userpass.username = '" . $_SESSION["username"] . "'";
+$nameQueryOutput = mysqli_query($connection, $nameQuery);
+$name = mysqli_fetch_row($nameQueryOutput);
 
 $positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $positionQueryOutput = mysqli_query($connection, $positionQuery);
 $position = mysqli_fetch_row($positionQueryOutput);
-
-$nameQuery = "SELECT name FROM userpass WHERE userpass.username = '" . $_SESSION["username"] . "'";
-$nameQueryOutput = mysqli_query($connection, $nameQuery);
-$name = mysqli_fetch_row($nameQueryOutput);
 
 $dobQuery = "SELECT date_of_birth FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $dobQueryOutput = mysqli_query($connection, $dobQuery);
@@ -35,7 +33,7 @@ $trainingRecords = "SELECT * FROM training WHERE player_name = '" . $name[0] . "
 $outputTraining = mysqli_query($connection, $trainingRecords);
 $RowTR1 = mysqli_fetch_row($outputTraining); 
 
-//Training Averages for Chart and table
+//Training Averages for Chart and table - basically the average time from their entered sessions that they spend at skills etc.
 $avgSkillsQuery = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training WHERE player_name = '" . $name[0] . "'";
 $avgSkillsOutput = mysqli_query($connection, $avgSkillsQuery);
 $avgSkills = mysqli_fetch_row($avgSkillsOutput);
@@ -50,15 +48,17 @@ $avgRecoveryOutput = mysqli_query($connection, $avgRecoveryQuery);
 $avgRecovery = mysqli_fetch_row($avgRecoveryOutput);
 ?>
 
-<html>
+<html><!--public html page -->
 <head>
 <title> Training Records page</title>
   <meta charset="UTF-8">
+  <!--link to JS Charts script-->
   <script type="text/javascript" src="jscharts.js"></script>
+  <!--link to style sheet-->
   <link rel="stylesheet" type="text/css" href="recordsstyle.css"/>
 </head>
 <body>
-<header>
+<header><!--header containing logos and page name -->
 <img id="LineImage" src="./backendImages/LineImage.png" alt="Line Chart" />
 <img id="BarImage" src="./backendImages/BarImage.png" alt="Bar Chart" />
 <a id="LogoutButton" href="./logout.php">Logout</a>
@@ -66,14 +66,14 @@ $avgRecovery = mysqli_fetch_row($avgRecoveryOutput);
 Training Records<br/>
 </header>
 
-<div id = "leftcolumn">
+<div id = "leftcolumn"><!--left column containing links to other back-end related pages-->
 <br/>
 <a href="./profile.php">Profile Analysis</a><br/><br/>
 <a href="./matchrecords.php">Your Match Records</a><br/><br/>
 <a href="./updatedetails.php">Update User Details</a>
 </div>
 
-<div id = "rightcolumn">
+<div id = "rightcolumn"><!--right column containing user's personal data-->
 <br/>
 
 Name: <?php echo $name[0]; ?><br/><br/>
@@ -89,16 +89,16 @@ County: <?php echo $county[0]; ?><br/><br/>
 Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
 
-<div id = "mainbody">
+<div id = "mainbody"><!--main body which contains the table and pie chart for the training data provided there is data entered, otherwise a notice stating no training records data has been entered-->
 <?php
 
-if($RowTR1[0] == null){
+if($RowTR1[0] == null){/*notice that no data is entered if not input*/
 	echo "<h1>You have not entered any Training Records!</h1>";
 } else {
 
 
 echo "<h1>Your Training records are as follows:</h1>";?>
-
+<!-- Pie Chart display of Training Records averages from the database for the user -->
 <div id="graph">Training Graphic Display Pie Chart</div>
 
 <script type="text/javascript">
@@ -119,6 +119,7 @@ echo "<h1>Your Training records are as follows:</h1>";?>
 	myChart.draw();
 </script>
 <?php
+/*table format of the data entered by the user including an averages row at the bottom*/
 echo "<table border='1'>";
 echo "<tr><th colspan='7'>Training Records Previously Entered</th></tr>";
 echo "<tr><td>Date</td><td>Status</td><td>Training Type</td><td>Skills Time</td><td>Fitness Time</td><td>Gym Time</td><td>Recovery Time</td></tr>";

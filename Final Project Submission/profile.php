@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <?php
+//including the database connection to run the sql(mysqli code)
 include './dbconnection.php';
-
+//start a session for right-column(personal details)
 @session_start();
+//set up query variables for personal details, using the username of the session i.e. the user's selected username
+//position
 $positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $positionQueryOutput = mysqli_query($connection, $positionQuery);
 $position = mysqli_fetch_row($positionQueryOutput);
-
+//name
 $nameQuery = "SELECT name FROM userpass WHERE userpass.username = '" . $_SESSION["username"] . "'";
 $nameQueryOutput = mysqli_query($connection, $nameQuery);
 $name = mysqli_fetch_row($nameQueryOutput);
-
+//date of birth
 $dobQuery = "SELECT date_of_birth FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $dobQueryOutput = mysqli_query($connection, $dobQuery);
 $dob = mysqli_fetch_row($dobQueryOutput);
-
+//gender
 $genderQuery = "SELECT gender FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $genderQueryOutput = mysqli_query($connection, $genderQuery);
 $gender = mysqli_fetch_row($genderQueryOutput);
-
+//club
 $clubQuery = "SELECT club_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $clubQueryOutput = mysqli_query($connection, $clubQuery);
 $club = mysqli_fetch_row($clubQueryOutput);
-
+//county
 $countyQuery = "SELECT county_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $countyQueryOutput = mysqli_query($connection, $countyQuery);
 $county = mysqli_fetch_row($countyQueryOutput);
 
-//Training Time All County Player Queries
+//Training Time All County Player Queries - average time the "top selected players" in our database spend at skills training etc.
 $queryT1 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training WHERE player_name <> '" . $name[0] . "'";
 $outputT1 = mysqli_query($connection, $queryT1);
 $RowT1 = mysqli_fetch_row($outputT1);
@@ -41,7 +44,7 @@ $queryT4 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training WHERE player_nam
 $outputT4 = mysqli_query($connection, $queryT4);
 $RowT4 = mysqli_fetch_row($outputT4);
 
-//Training Time Position County Player Queries
+//Training Time Position County Player Queries - average time the top selected players in the user's selected position in our database spend at skills training etc.
 $queryT5 = "SELECT ROUND(AVG(skills_time_minutes),2) FROM training JOIN players WHERE players.name = training.player_name AND players.position = '" . $position[0] . "' AND training.player_name <> '" . $name[0] . "'";
 $outputT5 = mysqli_query($connection, $queryT5);
 $RowT5 = mysqli_fetch_row($outputT5);
@@ -55,7 +58,7 @@ $queryT8 = "SELECT ROUND(AVG(recovery_minutes),2) FROM training JOIN players WHE
 $outputT8 = mysqli_query($connection, $queryT8);
 $RowT8 = mysqli_fetch_row($outputT8);
 
-//Match All County Player Queries
+//Match All County Player Queries - average KPIs of the "top selected players" in our matches as entered in our database
 $queryM1 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances WHERE player_name <> '" . $name[0] . "'";
 $outputM1 = mysqli_query($connection, $queryM1);
 $RowM1 = mysqli_fetch_row($outputM1);
@@ -72,7 +75,7 @@ $queryM5 = "SELECT ROUND(AVG(((goals + points)/(shots_on_target + wides))*100),2
 $outputM5 = mysqli_query($connection, $queryM5);
 $RowM5 = mysqli_fetch_row($outputM5);
 
-//Match Position County Player Queries
+//Match Position County Player Queries - as above but in the user's selected position
 $queryM6 = "SELECT ROUND(AVG(minutes_played),2) FROM appearances JOIN players WHERE players.name = appearances.player_name AND players.position = '" . $position[0] . "' AND appearances.player_name <> '" . $name[0] . "'";
 $outputM6 = mysqli_query($connection, $queryM6);
 $RowM6 = mysqli_fetch_row($outputM6);
@@ -90,18 +93,20 @@ $outputM10 = mysqli_query($connection, $queryM10);
 $RowM10 = mysqli_fetch_row($outputM10);
 
 ?>
-
+<!--opening of the html page display -->
 <html>
 <head>
 <title> Profile Analysis</title>
   <meta charset="UTF-8">
+  <!--referencing the jscharts javascript for the charts -->
   <script type="text/javascript" src="jscharts.js"></script>
+  <!--stylesheet for the Profile Analysis Page -->
   <link rel="stylesheet" type="text/css" href="profilestyle.css"/>
 </head>
 <body>
 
 
-<header>
+<header> <!--header containing site page name and logo images -->
 <img id="LineImage" src="./backendImages/LineImage.png" alt="Line Chart" />
 <img id="BarImage" src="./backendImages/BarImage.png" alt="Bar Chart" />
 <a id="LogoutButton" href="./logout.php">Logout</a>
@@ -111,7 +116,7 @@ Profile Analysis<br/>
 
 
 
-<div id = "leftcolumn">
+<div id = "leftcolumn"><!-- left column containing links to other back-end related pages and records for the user -->
 <br/>
 <a href="./trainingrecords.php">Your Training Records</a><br/><br/>
 <a href="./matchrecords.php">Your Match Records</a><br/><br/>
@@ -119,7 +124,9 @@ Profile Analysis<br/>
 </div>
 
 <div id = "mainbody">
+<!--main body is the centre section of the website -->
 <div id = "centerleft">
+<!--centre left section contains a form for the user to enter training details and compare their averages against the database data for the top players -->
 
 <form method="POST" action = '#'>
 <h1>Please Enter your Training Details:</h1><br/>
@@ -135,10 +142,12 @@ Profile Analysis<br/>
 <option value="Injured">Injured</option>
 <option value="OK">OK</option>
 </select><br/><br/>
+<!--key training types time form fields - when changed, there is a check to ensure an integer value is entered-->
 <label>Skills Training (in minutes)?</label> <input type="text" class = "textboxes" name="skills-training-length" required onchange="validateNumber(this.value)"><br/><br/>
 <label>Fitness Training (in minutes)?</label> <input type="text" class = "textboxes" name="fitness-training-length" required onchange="validateNumber(this.value)"><br/><br/>
 <label>Gym Training (in minutes)?</label> <input type="text" class = "textboxes" name="gym-training-length" required onchange="validateNumber(this.value)"><br/><br/>
 <label>Recovery Time (in minutes)?</label> <input type="text" class = "textboxes" name="recovery-training-length" required onchange="validateNumber(this.value)"><br/><br/><br/>
+<!-- user can compare against all or simply the players in their position -->
 How would you like to compare your details: <input type="radio" name="training-comparison" value = "0" /><b>All</b>
 <input type="radio" name="training-comparison" value = "1" /><b>Position</b><br/><br/>
 Would you like to save these details?<input type="checkbox" name="database-save" value="database-save"><br/><br/>
@@ -147,6 +156,7 @@ Would you like to save these details?<input type="checkbox" name="database-save"
 </form>
 
 <?php
+//using checks to ensure user has entered all details first - otherwise we have errors when the user opens the page as the variables below would not have been entered
   $trainingDateCheck = isset($_POST['training-date']);
   $trainingTypeCheck =isset($_POST['training-type']);
   $statusCheck =isset($_POST['status']);
@@ -157,8 +167,9 @@ Would you like to save these details?<input type="checkbox" name="database-save"
   $trainingComparisonCheck =isset($_POST['training-comparison']);
   $databaseSaveCheck = isset($_POST['database-save']);
 
+//if user has entered data...
  if ($trainingDateCheck && $trainingTypeCheck && $statusCheck && $skillsLengthCheck && $fitnessLengthCheck && $gymLengthCheck && $recoveryLengthCheck && $trainingComparisonCheck) {
-    
+   //set up and initialise variables to take the data from the fields in the form 
   $trainingDate = $_POST["training-date"];
   $trainingType = $_POST["training-type"];
   $status = $_POST["status"];
@@ -168,6 +179,7 @@ Would you like to save these details?<input type="checkbox" name="database-save"
   $recoveryLength = $_POST["recovery-training-length"];
   $trainingComparison = $_POST["training-comparison"];
 
+//if the comparison is All we print a table comparison with the data from all players in the database compared against the user
   if($trainingComparison == 0){
     echo "<table width='80%' border='1'>";
     echo "<tr><th colspan='6' align='center'>Training Time Comparison (in minutes)</th></tr>";
@@ -180,6 +192,7 @@ Would you like to save these details?<input type="checkbox" name="database-save"
     <td>{$recoveryLength}</td>";
     echo "<tr><td>Comparison</td><td>" . ROUND(($skillsLength/$RowT1[0])*100) . "%</td><td>" . ROUND(($fitnessLength/$RowT2[0])*100) . "%</td><td>" . ROUND(($gymLength/$RowT3[0])*100) . "%</td><td>" . ROUND(($recoveryLength/$RowT4[0])*100) . "%</td></tr>";
     echo "</table><br/><br/><br/>";
+    //if the compairion is Position we print a table comparison with the data from players in the user's position in the database compared against the user
 } else {
     echo "<table width='80%' border='1'>";
     echo "<tr><th colspan='5' align='center'>Training Time Comparison (in minutes)</th></tr>";
@@ -194,20 +207,20 @@ Would you like to save these details?<input type="checkbox" name="database-save"
     echo "</table><br/><br/><br/>";
 }?>
 
-<!--need to make the chart changeable in the same way as we've made the table changeable for position vs. all -->
-
-<div id="chartcontainer"> <!--Grahpic Display--></div>
+<div id="chartcontainer"> <!--Line Chart Grahpic Display using JS Charts, all code is copyright and licenced to JS Charts versions, amended based on guide specifications provided by JS Charts--></div>
 
 <script type="text/javascript">
 var myData1A = new Array([10, <?php echo $RowT1[0]; ?>], [15, <?php echo $RowT2[0]; ?>], [20, <?php echo $RowT3[0]; ?>], [25, <?php echo $RowT4[0]; ?>]);
 var myData1B = new Array([10, <?php echo $RowT5[0]; ?>], [15, <?php echo $RowT6[0]; ?>], [20, <?php echo $RowT7[0]; ?>], [25, <?php echo $RowT8[0]; ?>]);
 var myData2 = new Array([10, <?php echo $_POST['skills-training-length']; ?>], [15, <?php echo $_POST['fitness-training-length']; ?>], [20, <?php echo $_POST['gym-training-length']; ?>], [25, <?php echo $_POST['recovery-training-length']; ?>]);
 var myChart = new JSChart('chartcontainer', 'line');
+/*if user compares by position or All we have an if-else which generates the chart in an alternative manner*/
 <?php if($_POST['training-comparison'] == 0){ ?>
 myChart.setDataArray(myData1A, 'line_1');
 <?php } else { ?>
 myChart.setDataArray(myData1B, 'line_1');
 <?php } ?>
+/*Line chart colour schemes and style variables*/
 myChart.setDataArray(myData2, 'line_2');
 myChart.setAxisNameX('Training Types');
 myChart.setAxisNameColorX('#5555AA');
@@ -235,7 +248,7 @@ myChart.setLabelColorX('#5555AA');
 myChart.draw();
 </script>
 
-    <?php if($databaseSaveCheck){
+    <?php if($databaseSaveCheck){/*if the user wants to save the details into our database, we have an insert for same! */
       $newUserTrainingData = "INSERT INTO training VALUES ('$name[0]', '$trainingDate', '$status', '$trainingType', '$skillsLength', '$fitnessLength', '$gymLength', '$recoveryLength')";
       $insertTrainingData = @mysqli_query($connection, $newUserTrainingData);
     }
@@ -245,6 +258,7 @@ myChart.draw();
 </div>
 
 <div id = "centerright">
+<!--centre right section contains a form for the user to enter match details and compare the data against KPIs from the database data for the top players -->
 
 <form method="POST" action = '#'>
 <h1>Please Enter your Match Details:</h1><br/>
@@ -254,6 +268,8 @@ myChart.draw();
 <option value="Club">Club</option>
 <option value="County">County</option>
 </select><br/><br/>
+<!--key KPI related form data fields -->
+<!--key training types time form fields - when changed, there is a check to ensure an integer value is entered-->
 <label>Minutes Played:</label> <input type="text" class = "textboxes" name="minutes-played" required onchange="validateNumber(this.value)"><br/><br/>
 <label>Distance Covered in meters:</label> <input type="text" class = "textboxes" name="distance-covered" required onchange="validateNumber(this.value)"><br/><br/>
 <label>Number of Possessions:</label> <input type="text" class = "textboxes" name="possessions" required onchange="validateNumber(this.value)"><br/><br/>
@@ -262,6 +278,7 @@ myChart.draw();
 <label>Attempts:</label> <input type="text" class = "textboxes" name="attempts" required onchange="validateNumber(this.value)"><br/><br/>
 <label>Goals:</label> <input type="text" class = "textboxes" name="goals" required onchange="validateNumber(this.value)"><br/><br/>
 <label>Points:</label> <input type="text" class = "textboxes" name="points" required onchange="validateNumber(this.value)"><br/><br/><br/>
+<!--the user can compare against All players in the database or those in their position -->
 How would you like to compare your details: <input type="radio" name="match-comparison" value = "0" /><b>All</b>
 <input type="radio" name="match-comparison" value = "1" /><b>Position</b><br/><br/>
 Would you like to save these details?<input type="checkbox" name="database-save2" value="database-save2"><br/><br/>
@@ -272,6 +289,7 @@ Would you like to save these details?<input type="checkbox" name="database-save2
 
 
 <?php
+//using checks to ensure user has entered all details first - otherwise we have errors when the user opens the page as the variables below would not have been entered
   $matchDateCheck = isset($_POST['match-date']);
   $matchTypeCheck = isset($_POST['match-type']);
   $minsPlayedCheck = isset($_POST['minutes-played']);
@@ -284,9 +302,9 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   $pointsCheck = isset($_POST['points']);
   $matchComparisonCheck = isset($_POST['match-comparison']);
   $databaseSaveCheck2 = isset($_POST['database-save2']);
-
+//if user has entered data...
   if($matchDateCheck && $matchTypeCheck && $minsPlayedCheck && $distanceCoveredCheck && $possessionsCheck && $passesCompleteCheck && $passesIncompleteCheck &&$attemptsCheck && $goalsCheck && $pointsCheck && $matchComparisonCheck) {
-
+   //set up and initialise variables to take the data from the fields in the form 
   $matchDate = $_POST['match-date'];
   $matchType = $_POST['match-type'];
   $minutesPlayed = $_POST['minutes-played'];
@@ -297,7 +315,7 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   $passCompletionPercentage = ROUND(($passesComplete / ($passesComplete + $passesIncomplete))*100);
    
    if($_POST['attempts']== 0){
-	$attempts = 1; /* - To avoid "Divide By Zero Error" */
+	$attempts = 1; /* - To avoid "Divide By Zero Error when the user might enter 0 attempts!" */
 	} else
 	 $attempts = $_POST['attempts'];
 	 
@@ -307,6 +325,7 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   $distancePerMinute = ROUND($distanceCovered / $minutesPlayed);
   $matchComparison = $_POST['match-comparison'];
 
+//if the comparison is All we print a table comparison with the data from all players in the database compared against the user
   if($matchComparison == 0){
     echo "<table width='80%' border='1'>";
     echo "<tr><th colspan='6' align='center'>Match KPI Comparison</th></tr>";
@@ -320,6 +339,7 @@ Would you like to save these details?<input type="checkbox" name="database-save2
       <td>{$shotSuccessPercentage}%</td></tr>";
     echo "<tr><td>Comparison</td><td>" . ROUND(($minutesPlayed/$RowM1[0])*100) . "%</td><td>" . ROUND(($distanceCovered/$RowM2[0])*100) . "%</td><td>" . ROUND(($possessions/$RowM3[0])*100) . "%</td><td>" . ROUND(($passCompletionPercentage/$RowM4[0])*100) . "%</td><td>" . ROUND(($shotSuccessPercentage/$RowM5[0])*100) . "%</td></tr>";
     echo "</table><br/><br/><br/>";
+    //if the compairion is Position we print a table comparison with the data from players in the user's position in the database compared against the user
   } else {
      echo "<table width='80%' border='1'>";
     echo "<tr><th colspan='6' align='center'>Match KPI Comparison</th></tr>";
@@ -336,16 +356,19 @@ Would you like to save these details?<input type="checkbox" name="database-save2
   } 
   ?>
 
- <div id="chartcontainer2"><!--Grahpic Display--></div>
+ <div id="chartcontainer2"><!--Bar Chart Grahpic Display using JS Charts, all code is copyright and licenced to JS Charts versions, amended based on guide specifications provided by JS Charts--></div>
 <script type="text/javascript">
+/*variables per information form database and user entries*/
 var myData2A = new Array(['Distance(Mtrs) per Min', <?php echo ROUND($RowM2[0]/$RowM1[0]); ?>, <?php echo  $distancePerMinute; ?>], ['Poss', <?php echo $RowM3[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM4[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM5[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
 var myData2B = new Array(['Distance(Mtrs) per Min', <?php echo ROUND($RowM7[0]/$RowM6[0]); ?>, <?php echo  $distancePerMinute; ?>], ['Poss', <?php echo $RowM8[0]; ?>, <?php echo $_POST['possessions']; ?>], ['Pass Comp %', <?php echo $RowM9[0]; ?>, <?php echo $passCompletionPercentage; ?>], ['Sht Succ %', <?php echo $RowM10[0]; ?>, <?php echo $shotSuccessPercentage; ?>]);
 var myChart2 = new JSChart('chartcontainer2', 'bar');
+/*if user compares by position or All we have an if-else which generates the chart in an alternative manner*/
 <?php if($_POST['match-comparison'] == 0){ ?>
 myChart2.setDataArray(myData2A);
 <?php } else { ?>
 myChart2.setDataArray(myData2B);
 <?php } ?>
+/*BAR chart colour schemes and style variables*/
 myChart2.setBarColor('#0000ff', 1);
 myChart2.setBarColor('#006600', 2);
 myChart2.setAxisNameX('Match KPIs');
@@ -364,8 +387,8 @@ myChart2.draw();
 </script>
 </div>
 
-
 <?php
+/*if the user wants to save the details into our database, we have an insert for same! */
 if($databaseSaveCheck2){
       $newUserMatchData = "INSERT INTO appearances VALUES ('$name[0]', '$matchDate', '$matchType', '$minutesPlayed', '$distanceCovered', '$possessions', 'null', 'null', 'null', '$passesComplete', 'null', 'null', '$passesIncomplete', '$attempts', 'null', 'null', 'null', '$goals', '$points', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null')";
       $insertMatchData = @mysqli_query($connection, $newUserMatchData); 
@@ -373,17 +396,11 @@ if($databaseSaveCheck2){
 
   };?>
 
-
-
 </div>
 </div>
 
-<div id = "rightcolumn">
+<div id = "rightcolumn"><!-- right column containing the personal details of the user per the database - user must have accessed the page and their username is in play during the session so the relationship between the "userpass" and "players" database tables is the user's name and details are pulled from each for these pages-->
 <br/>
-
-<!--assumption USER has logged in and has accessed the page -->
-<!--They have accessed with their username which is stored in our database and in registering for our site they will have provided their name, dob, gender, club, county, position, etc.-->
-
 
 Name: <?php echo $name[0]; ?><br/><br/>
 

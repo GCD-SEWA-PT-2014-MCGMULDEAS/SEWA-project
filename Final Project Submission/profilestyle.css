@@ -1,3 +1,5 @@
+/*Profile stlyle with colour schemes, font style, format and structure of sections / positioning on the page */
+/*main overall body section*/
 body{
 	background-color:white;
 	font-family: Arial;
@@ -10,6 +12,27 @@ body{
 	margin-bottom: 3%;
 }
 
+/*header format*/
+header{
+	text-align: center;
+	margin:0px;
+	padding:0px;
+	min-width:100%;
+    max-width:100%;
+    font-family: Arial;
+    top:0px;
+    left:0px;
+    position:absolute;
+	font-weight:bold;
+	font-size:18pt;
+	font-style:none;
+	text-align:center;
+	height:16%;
+	background-color:#EBEBE0;
+	box-shadow: 0px 0px 1px 1px;
+}
+
+/*image styles */
 #WebImage{
 	border-top: 0px;
 	border-radius: 4px;
@@ -18,7 +41,7 @@ body{
 	float:center;
 	margin-left:3%;
 }
-
+/*top left image*/
 #LineImage{
 	border-top: 0px;
 	border-radius: 4px;
@@ -27,7 +50,7 @@ body{
 	width:10%;
 	height:100%;
 }
-
+/*top right image*/
 #BarImage{
 	border-top: 0px;
 	border-radius: 4px;
@@ -36,17 +59,21 @@ body{
 	width:10%;
 	height:100%;
 }
-
+/*logout button style*/
 #LogoutButton{
 	float:right;
 	margin-right:1%;
 	font:11pt;
 }
 
+/*background colour, font etc. for table*/
 table{
 background-color:#f8f8f8;
+font-size:9pt;
+width:100%;
 }
 
+/*putting structure on form labels and data fields*/
 label {
 	float: left; 
 	width: 170px;
@@ -58,6 +85,7 @@ input[type=text], input[type=date], select {
 	width: 160px; 
 }
 
+/*left column style */
 #leftcolumn{
 	background-color:#EBEBE0;
 	margin-top:8.5%;
@@ -72,6 +100,7 @@ input[type=text], input[type=date], select {
 	border-radius: 4px;
 }
 
+/*main body broken into left and right sections for training and match forms and charts etc. */
 #mainbody{
 	margin-top:8%;
 	width:70%;
@@ -101,11 +130,6 @@ input[type=text], input[type=date], select {
 	height:100%;
 }
 
-table{
-	font-size:9pt;
-	width:100%;
-}
-
 #rightcolumn{
 	background-color:#EBEBE0;
 	margin-top:8.5%;
@@ -120,29 +144,15 @@ table{
 	padding-left:5px;
 }
 
+/*font for links*/
+a{
+	font-size:11pt;
+}
+
+/*colour change for links when hovered over*/
 a:hover, a:active{
 	background-color:white;
 }
 
-header{
-	text-align: center;
-	margin:0px;
-	padding:0px;
-	min-width:100%;
-    max-width:100%;
-    font-family: Arial;
-    top:0px;
-    left:0px;
-    position:absolute;
-	font-weight:bold;
-	font-size:18pt;
-	font-style:none;
-	text-align:center;
-	height:16%;
-	background-color:#EBEBE0;
-	box-shadow: 0px 0px 1px 1px;
-}
 
-a{
-	font-size:11pt;
-}
+

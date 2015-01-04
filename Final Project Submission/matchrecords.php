@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<!--including db connection to take sql queries-->
 <?php
 include './dbconnection.php';
-
+/*session start for profile details on right columns*/
 @session_start();
+/*queries for data on the right hand side*/
 $positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $positionQueryOutput = mysqli_query($connection, $positionQuery);
 $position = mysqli_fetch_row($positionQueryOutput);
@@ -32,15 +34,16 @@ $outputMatch = mysqli_query($connection, $matchRecords);
 $RowMA1 = mysqli_fetch_row($outputMatch);
 ?>
 
-<html>
+<html><!--html (public web page) -->
 <head>
 <title> Match Records page</title>
   <meta charset="UTF-8">
+  <!-- link to style sheet-->
   <link rel="stylesheet" type="text/css" href="recordsstyle.css"/>
 </head>
 <body>
 
-<header>
+<header><!--header containng logos and page name -->
 <img id="LineImage" src="./backendImages/LineImage.png" alt="Line Chart" />
 <img id="BarImage" src="./backendImages/BarImage.png" alt="Bar Chart" />
 <a id="LogoutButton" href="./logout.php">Logout</a>
@@ -48,14 +51,14 @@ $RowMA1 = mysqli_fetch_row($outputMatch);
 Match Records<br/>
 </header>
 
-<div id = "leftcolumn">
+<div id = "leftcolumn"><!--left column containing links to other pages-->
 <br/>
 <a href="./profile.php">Profile Analysis</a><br/><br/>
 <a href="./trainingrecords.php">Your Training Records</a><br/><br/>
 <a href="./updatedetails.php">Update User Details</a>
 </div>
 
-<div id = "rightcolumn">
+<div id = "rightcolumn"><!--right column containig user details as taken using the user's session username and links to the database-->
 <br/>
 
 Name: <?php echo $name[0]; ?><br/><br/>
@@ -71,7 +74,7 @@ County: <?php echo $county[0]; ?><br/><br/>
 Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
 
-<div id = "mainbody">
+<div id = "mainbody"><!--main body containing the user's match record details (IF ENTERED - if not then a simple sentence informing them of same is put up!) -->
 <?php
 
 if($RowMA1[0] == null){
@@ -82,6 +85,7 @@ echo "<table border='1'>";
 echo "<tr><th colspan='10'>Match Records Previously Entered</th></tr>";
 echo "<tr><td>Date</td><td>Match Type</td><td>Minutes Played</td><td>Distance Covered (mtrs)</td><td>No. of Possesions</td><td>Passes Complete</td><td>Passes Incomplete</td><td>Attempts</td><td>Goals</td><td>Points</td></tr>";
 do {
+	/*user's saved match data in table rows / columns*/
 echo "<tr><td>{$RowMA1[1]}</td>";
 echo "<td>{$RowMA1[2]}</td>";
 echo "<td>{$RowMA1[3]}</td>";
@@ -96,11 +100,9 @@ $RowMA1 = mysqli_fetch_row($outputMatch);
 } while ($RowMA1);  
 echo "</table>";
 };
-
 ?>
 
 </div>
-
 
 </body>
 </html>
