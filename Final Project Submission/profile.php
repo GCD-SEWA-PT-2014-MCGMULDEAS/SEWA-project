@@ -93,7 +93,7 @@ $RowM10 = mysqli_fetch_row($outputM10);
 
 <html>
 <head>
-<title> Profile page</title>
+<title> Profile Analysis</title>
   <meta charset="UTF-8">
   <script type="text/javascript" src="jscharts.js"></script>
   <link rel="stylesheet" type="text/css" href="profilestyle.css"/>
@@ -106,7 +106,7 @@ $RowM10 = mysqli_fetch_row($outputM10);
 <img id="BarImage" src="./backendImages/BarImage.png" alt="Bar Chart" />
 <a id="LogoutButton" href="./logout.php">Logout</a>
 <img id="WebImage" src="./backendImages/logo.jpg" alt="GFC Logo" /><br/>
-Player Profile<br/>
+Profile Analysis<br/>
 </header>
 
 
@@ -221,7 +221,6 @@ myChart.setLineWidth(3);
 myChart.setTitle('Training Comparison Graph');
 myChart.setTitleColor('#5555AA');
 myChart.setTitleFontSize(12);
-/*myChart.setBackgroundColor('#f8f8f8');*/
 myChart.setAxisValuesNumberX(4);
 myChart.setShowXValues(false);
 myChart.setAxisValuesColorX('#5555AA');
@@ -361,7 +360,6 @@ myChart2.setAxisValuesColorX('#5555AA');
 myChart2.setAxisValuesColorY('#5555AA');
 myChart2.setAxisValuesNumberY(10);
 myChart2.setAxisValuesDecimalsY(0);
-/*myChart2.setBackgroundColor('#f8f8f8');*/
 myChart2.draw();
 </script>
 </div>
