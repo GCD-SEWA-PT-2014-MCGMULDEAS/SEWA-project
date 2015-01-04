@@ -6,7 +6,9 @@
   <title>GFC STATS.COM</title>
   <link rel = "stylesheet" type="text/css" href="index.css" />
 
-	<!-- Script to rotate images on the site -->
+	<!-- Script to rotate images on the site 
+http://www.htmlgoodies.com/beyond/javascript/article.php/3881826
+  -->
   
   <script type="text/JavaScript1.2">
 
@@ -52,6 +54,9 @@
 
 <body>
 
+<!-- Source for menus 
+http://inspirationalpixels.com/tutorials/creating-a-dropdown-menu-with-html-css
+-->
   <div id="header" class="wrap">
 
       <img src ="./Images/logo.jpg" alt = "Logo">
