@@ -32,7 +32,7 @@ Gavs css ? Section for login and logo in header
               </ul>
             </li>
             <li>
-               <a href="about.php">About us <span class="arrow">&#9660;</span></a>
+               <a href="about.html">About us <span class="arrow">&#9660;</span></a>
  
               <ul class="sub-menu">
                   <li><a href="about.php#who">Who we are</a></li>
