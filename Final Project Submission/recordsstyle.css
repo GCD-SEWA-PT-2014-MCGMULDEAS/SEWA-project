@@ -53,6 +53,12 @@ input[type=text], input[type=date], select {
 
 table{
 background-color:#f8f8f8;
+width: 80%;
+}
+
+th{
+
+	text-align: center;
 }
 
 #leftcolumn{
