@@ -71,7 +71,7 @@ Section with the body text for the main page
   <h1 id="how">How it works </h1>
   <p class = 'left'><img style="float:left" src="./Images/register.jpg" height="150" alt="register">  
 
-To gain access to the analysis section a user must login and register on the site. Once registration is completed, an option is available to input personal data on training and matches based on individual dates. Thus a user can maintain a comprehensive record of their training activities and match performance indicators over time, enablisng them to identify and focus on training activities that will enhance their overall performance.</p>
+To gain access to the analysis section a user must login and register on the site. Once registration is completed, an option is available to input personal data on training and matches based on individual dates. Thus a user can maintain a comprehensive record of their training activities and match performance indicators over time, enabling them to identify and focus on training activities that will enhance their overall performance.</p>
 
 <p> Once data has been input a user can compare their input v' the complete list of players or specifically players that play in the same position. The output is displayed in graphs making it easy to quickly identify areas that could be improved.</p>  
 
@@ -80,7 +80,7 @@ To gain access to the analysis section a user must login and register on the sit
   <h1 style = "text-align:center"><a name = "analyse">Analysing your Activities</a></h1>
   <p class="right"><img style="float:right" src="./Images/form1.png" width="230" alt="form1"> 
 
-Keeping a record of your training and match performances is key to getting the most out of the website. There are a number of ways that you can record this information from basic forms to various apps and software packages. We have incldued a basic form that you can download and copy to keep track, though for matches we would recommend a friend or coach records the data for accuracy purposes.</p>
+Keeping a record of your training and match performances is key to getting the most out of the website. There are a number of ways that you can record this information from basic forms to various apps and software packages. We have included a basic form that you can download and copy to keep track, though for matches we would recommend a friend or coach records the data for accuracy purposes.</p>
  
  <br/>
 
