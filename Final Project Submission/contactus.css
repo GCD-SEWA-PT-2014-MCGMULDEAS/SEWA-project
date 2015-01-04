@@ -1,23 +1,25 @@
+/*Style sheet for Contact Us Page - different to the Home and About Us page styles given the different sections/format here */
 header{
-	top:0px;
-	left:0px;
-	width: 100%;
-	height: 100px;
-	background-color:#303030;
-  padding-bottom: 11px;
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 100px;
+  background-color:#303030;
+  /*padding plentiful in different browsers given the rneder was different between multiple browsers for header and footer */
+  padding-bottom: 2.5%;
 }
 
 .wrap img{
-	float:center;
-	width:60%;
-	margin-left:20%;
-	margin-right:20%;
-	height:100px;
-	float: center;
+  float:center;
+  width:60%;
+  margin-left:20%;
+  margin-right:20%;
+  height:100px;
+  float: center;
 }
 
 /**************************************************************
-****	CSS for the navigation bar**/
+****  CSS for the navigation bar**/
 .clearfix:after {
     display:block;
     clear:both;
@@ -122,90 +124,96 @@ header{
     background:#ededed;
 }
 
+/*body and main body styles */
 body{
-	background-color: #303030;
-	color: #919191;
-	width:100%;
-	overflow: scroll;
-	margin:0px;
+  background-color: #303030;
+  color: #919191;
+  width:100%;
+  overflow: scroll;
+  margin:0px;
 }
 
 #mainbody{
-	left:0px;
-	margin-top:4.5%;
-	width:100%;
-	position:absolute;
-	color:black;
-	font-size:12pt;
-	font-weight: bold;
-	height:75%;
-	margin-bottom: 0%;
-	background-color:#ededed;
+  padding-bottom: 2%;
+  left:0px;
+  margin-top:6.5%;
+  width:100%;
+  position:absolute;
+  color:black;
+  font-size:12pt;
+  font-weight: bold;
+  height:75%;
+  margin-bottom: 0%;
+  background-color:#ededed;
+  padding-top: 1%;
 }
 
+/*contact form */
 #leftcenter{
-	padding-top: 1%;
-	margin-left:8%;
-	width:45%;
-	position:absolute;
-	margin-right:50%;
-	font-size:12pt;
-	height:90%;
+  padding-top: 1%;
+  margin-left:8%;
+  width:45%;
+  position:absolute;
+  margin-right:50%;
+  font-size:12pt;
+  height:90%;
 }
 
+/*address*/
 #address{
-	font-weight:normal;
-	font-style:italic;
+  font-weight:normal;
+  font-style:italic;
 }
 
+/*iframe and right center container section for google maps */
 #rightcenter{
-	padding-top: 1%;
-	margin-left:45%;
-	margin-right:8%;
-	width:55%;
-	position:absolute;
-	font-size:12pt;
-	height:95%;
+  padding-top: 1%;
+  margin-left:45%;
+  margin-right:8%;
+  width:55%;
+  position:absolute;
+  font-size:12pt;
+  height:95%;
 }
 
 /*For Google Map */
 iframe{
-	position:absolute;
-	width: 90%;
-	height: 90%;
+  position:absolute;
+  width: 90%;
+  height: 90%;
 }
 
 /*For Form */
 .forminline{
-	display:inline;
+  display:inline;
 }
 
 /*Asterisk colour*/
 .asterisk{
-	color:red;
+  color:red;
 }
 
 /*text box input fields */
 input[type = "text"]{
-	width: 250px;
-	height: 20px;
- 	border: 1px solid;
+  width: 250px;
+  height: 20px;
+  border: 1px solid;
     border-radius: 7px;
 }
 
 /*text box input fields */
 textarea{
- 	border: 1px solid;
+  border: 1px solid;
     border-radius: 7px;
 }
 
 footer {
-	margin-top:35%;
-  padding-top: 120px;
-	color:#ededed;
-  	font-size: 12pt;
-	left:5px;
-	min-width:100%;
+  margin-top:35%;
+  padding-top: 10%;
+  color:#ededed;
+    font-size: 12pt;
+  left:5px;
+  min-width:100%;
     max-width:100%;
     height:35%;
     background-color:#303030;
@@ -218,7 +226,7 @@ footer {
 }
 
 #firstfootercolumn{
-	padding-left:5%;
+  padding-left:5%;
 }
  
 .col h2 { 
