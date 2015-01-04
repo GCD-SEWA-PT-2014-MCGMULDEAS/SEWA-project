@@ -4,7 +4,7 @@
 	$key = "AIzaSyDOd7zDjy5MtmLJei0AORAXUGLsuwW6iXk";
 	/*For Server = AIzaSyD3H-YxeHsZHOVa2EfiePuJOwjGgrRSpOk*/
 	//also set up one final variable where we concatenate these vairables in addition to code for the embedded sateliite view of the google maps API.
-	$embeddedCode = "&q=" . "Griffith College Dublin" . "," . "Dublin" . "," . "Ireland" . "&zoom=20&maptype=satellite";
+	$embeddedCode = "&amp;q=" . "GriffithCollegeDublin" . "," . "Dublin" . "," . "Ireland" . "&amp;zoom=20&amp;maptype=satellite";
 ?>
 
 <html>
