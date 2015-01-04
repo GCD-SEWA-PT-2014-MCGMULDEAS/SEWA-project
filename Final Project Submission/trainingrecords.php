@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 include './dbconnection.php';
 ?>
@@ -53,6 +54,7 @@ $avgRecovery = mysqli_fetch_row($avgRecoveryOutput);
 <head>
 <title> Training Records page</title>
   <meta charset="UTF-8">
+  <script type="text/javascript" src="jscharts.js"></script>
   <link rel="stylesheet" type="text/css" href="recordsstyle.css"/>
 </head>
 <body>
@@ -87,8 +89,6 @@ County: <?php echo $county[0]; ?><br/><br/>
 Position: <?php echo $position[0]; ?> <br/><br/>
 </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
-
 <div id = "mainbody">
 <?php
 
@@ -97,23 +97,7 @@ if($RowTR1[0] == null){
 } else {
 
 
-echo "<h1>Your Training records are as follows:</h1>";
-echo "<table width='80%' border='1'>";
-echo "<tr><th colspan='7' align='center'>Training Records Previously Entered</th></tr>";
-echo "<tr><td>Date</td><td>Status</td><td>Training Type</td><td>Skills Time</td><td>Fitness Time</td><td>Gym Time</td><td>Recovery Time</td></tr>";
-do {
-echo "<tr><td>{$RowTR1[1]}</td>";
-echo "<td>{$RowTR1[2]}</td>";
-echo "<td>{$RowTR1[3]}</td>";
-echo "<td>{$RowTR1[4]}</td>";
-echo "<td>{$RowTR1[5]}</td>";
-echo "<td>{$RowTR1[6]}</td>";
-echo "<td>{$RowTR1[7]}</td></tr>";
-$RowTR1 = mysqli_fetch_row($outputTraining);
-} while ($RowTR1);
-echo "<tr><td>Your Averages </td><td>n/a</td><td>n/a</td><td>{$avgSkills[0]}</td><td>{$avgFitness[0]}</td><td>{$avgGym[0]}</td><td>{$avgRecovery[0]}</td></tr>"; 
-
-?>
+echo "<h1>Your Training records are as follows:</h1>";?>
 
 <div id="graph">Training Graphic Display Pie Chart</div>
 
@@ -134,14 +118,27 @@ echo "<tr><td>Your Averages </td><td>n/a</td><td>n/a</td><td>{$avgSkills[0]}</td
 	myChart.setBackgroundImage('chart_bg.jpg');
 	myChart.draw();
 </script>
-
 <?php
+echo "<table border='1'>";
+echo "<tr><th colspan='7'>Training Records Previously Entered</th></tr>";
+echo "<tr><td>Date</td><td>Status</td><td>Training Type</td><td>Skills Time</td><td>Fitness Time</td><td>Gym Time</td><td>Recovery Time</td></tr>";
+do {
+echo "<tr><td>{$RowTR1[1]}</td>";
+echo "<td>{$RowTR1[2]}</td>";
+echo "<td>{$RowTR1[3]}</td>";
+echo "<td>{$RowTR1[4]}</td>";
+echo "<td>{$RowTR1[5]}</td>";
+echo "<td>{$RowTR1[6]}</td>";
+echo "<td>{$RowTR1[7]}</td></tr>";
+$RowTR1 = mysqli_fetch_row($outputTraining);
+} while ($RowTR1);
+echo "<tr><td>Your Averages </td><td>n/a</td><td>n/a</td><td>{$avgSkills[0]}</td><td>{$avgFitness[0]}</td><td>{$avgGym[0]}</td><td>{$avgRecovery[0]}</td></tr>"; 
+echo "</table>";
+
 	};
 ?>
 
 </div>
-
-<!------------------------------------------------------------------------------------------------------------------------------------------------------>
 
 </body>
 </html>
