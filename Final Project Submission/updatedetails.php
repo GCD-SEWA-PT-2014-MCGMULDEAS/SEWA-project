@@ -1,11 +1,7 @@
 <?php
+@session_start();
 include './dbconnection.php';
 
-?>
-
-<?php
-
-@session_start();
 $positionQuery = "SELECT position FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $positionQueryOutput = mysqli_query($connection, $positionQuery);
 $position = mysqli_fetch_row($positionQueryOutput);
@@ -14,6 +10,10 @@ $nameQuery = "SELECT name FROM userpass WHERE userpass.username = '" . $_SESSION
 $nameQueryOutput = mysqli_query($connection, $nameQuery);
 $name = mysqli_fetch_row($nameQueryOutput);
 
+$emailQuery = "SELECT email FROM userpass WHERE userpass.username = '" . $_SESSION["username"] . "'";
+$emailQueryOutput = mysqli_query($connection, $emailQuery);
+$email = mysqli_fetch_row($emailQueryOutput);
+
 $dobQuery = "SELECT date_of_birth FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $dobQueryOutput = mysqli_query($connection, $dobQuery);
 $dob = mysqli_fetch_row($dobQueryOutput);
@@ -21,6 +21,10 @@ $dob = mysqli_fetch_row($dobQueryOutput);
 $genderQuery = "SELECT gender FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $genderQueryOutput = mysqli_query($connection, $genderQuery);
 $gender = mysqli_fetch_row($genderQueryOutput);
+
+$heightQuery = "SELECT height_in_meters FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
+$heightQueryOutput = mysqli_query($connection, $heightQuery);
+$height = mysqli_fetch_row($heightQueryOutput);
 
 $clubQuery = "SELECT club_name FROM players JOIN userpass WHERE userpass.name = players.name AND userpass.username = '" . $_SESSION["username"] . "'";
 $clubQueryOutput = mysqli_query($connection, $clubQuery);
@@ -76,14 +80,14 @@ Position: <?php echo $position[0]; ?> <br/><br/>
 <form method="POST" action = "./testupdate.php">
 <h1>Your Details:</h1><br/>
 <label for="name">Name:</label><?php echo $name[0]; ?><br/><br/><!--<input type="text" class = "textboxes" name="name" value = "name" required><br/><br/>-->
-<label for="email">Enter an email address:</label> <input type = "text" name = "email" id = "email" required/><br/><br/>
-<label for="gender">Gender:</label>  <select id = "gender"  name = "gender" required>
+<label for="email">Enter an email address:</label> <input type = "text" name = "email" id = "email" required value="<?php echo $email[0]; ?>"/><br/><br/>
+<label for="gender">Gender:</label>  <select id = "gender"  name = "gender">
 <option value = "M">Male</option>
 <option value = "F">Female</option></select><br/><br/>
-<label for="dob">Date of Birth:</label>  <input type="date" name="dob" value = "dob" required><br/><br/>
-<label for="height">Height(Meters):</label> <input type = "text" name = "height" id = "height" required/><br/><br/>
-<label for="club">Club:</label> <input type = "text" name = "club" id = "club" required/><br/><br/>
-<label for="county">County:</label> <input type = "text" name = "county" id = "county" required/><br/><br/>
+<label for="dob">Date of Birth:</label>  <input type="date" name="dob" value = "dob" required value="<?php echo $dob[0]; ?>"><br/><br/>
+<label for="height">Height(Meters):</label> <input type = "text" name = "height" id = "height" required value="<?php echo $height[0]; ?>"/><br/><br/>
+<label for="club">Club:</label> <input type = "text" name = "club" id = "club" required value="<?php echo $club[0]; ?>"/><br/><br/>
+<label for="county">County:</label> <input type = "text" name = "county" id = "county" required value="<?php echo $county[0]; ?>"/><br/><br/>
 <label for="position">Position:</label> <select id = "position" name = "position" required>
 <option value = "GOALKEEPER">Goalkeeper</option>
 <option value = "DEFENDER">Defender</option>
