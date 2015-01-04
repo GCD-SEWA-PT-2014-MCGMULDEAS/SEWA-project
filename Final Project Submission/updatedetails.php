@@ -55,7 +55,7 @@ Update Details<br/>
 
 <div id = "leftcolumn">
 <br/>
-<a href="./profile.php">Profile</a><br/><br/>
+<a href="./profile.php">Profile Analysis</a><br/><br/>
 <a href="./trainingrecords.php">Your Training Records</a><br/><br/>
 <a href="./matchrecords.php">Your Match Records</a>
 </div>
