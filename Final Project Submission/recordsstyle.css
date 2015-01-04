@@ -108,7 +108,7 @@ th{
 	margin-top:8%;
 	width:75%;
 	margin-left:15%;
-	position:fixed;
+	position:absolute;
 	float:center;
 	margin-right:15%;
 	font-size:8pt;
