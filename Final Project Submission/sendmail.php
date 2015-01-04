@@ -14,7 +14,7 @@ $headers .= 'CC: '. $email . "\r\n"; //Send emai back to sender in CC
 $message = wordwrap($message, 70);
 // Send Mail By PHP Mail Function
 mail("gfcstats@gfc.dxhost.net", $subject, $message, $headers);
-echo "Your mail has been sent successfuly ! Thank you for your feedback";
+echo "Your mail has been sent successfuly ! Thank you for your feedback!<br/>";
 echo "Return to <a href = 'index.php'>Homepage</a>.";
 }
 }
