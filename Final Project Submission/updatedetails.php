@@ -58,7 +58,7 @@ $county = mysqli_fetch_row($countyQueryOutput);
 Update Details<br/>
 </header>
 
-<div id = "leftcolumn">,<!-- left column containing links to other back-end related pages -->
+<div id = "leftcolumn"><!-- left column containing links to other back-end related pages -->
 <br/>
 <a href="./profile.php">Profile Analysis</a><br/><br/>
 <a href="./trainingrecords.php">Your Training Records</a><br/><br/>
