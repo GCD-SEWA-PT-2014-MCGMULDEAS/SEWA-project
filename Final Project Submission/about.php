@@ -9,10 +9,6 @@
 
 
 <body>
-<!-- ******************************************************************************
-Gavs css ? Section for login and logo in header
-<link rel="stylesheet" type="text/css" href="headerfooter.css">
--->
 
 	 <div id="header" class="wrap">
 
@@ -117,16 +113,14 @@ Keeping a record of your training and match performances is key to getting the m
 Footer details here
 -->
 
-<footer class="site-footer">
-
-<div class="col">
+<footer>
+<div class="col" id="firstfootercolumn">
   <h2>Sample links</h2>
-  <ul>
-    <li><a href="#">Terms & Conditions</a></li>
-    <li><a href="#">Sitemap</a></li>
-    <li><a href="#">Useful links</a></li>
-  </ul>
-</div>
+ <span class = "minorlinks"><a href="#">Terms & Conditions</a><br/></span>
+  <span class = "minorlinks"><a href="#">Sitemap</a><br/></span>
+  <span class = "minorlinks"><a href="#">Useful links</a><br/></span>
+  </div>
+
 <div class="col">
   <h2>GFC-Stats.com</h2>
   <ul>
@@ -135,17 +129,17 @@ Footer details here
     <li>All references to any known individuals are for demonstration purposes only</li>
   </ul>
 </div>
-<div class="col">
+
+<div class="col" id = "image">
   <h2>You can find us on:</h2>
   <ul>
-  <!--<span id = "image">-->
-    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="50" height="50" alt="facebook"></a></li>
-    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="50" height= "50" alt="linkdin"></a></li>
-    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="50" height= "50" alt="instagram"></a></li>
-    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="50" height= "50" alt="twitter"></a></li>
-  <!--</span>-->
+    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="30" height="30" alt="facebook"></a></li>
+    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="30" height= "30" alt="linkdin"></a></li>
+    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="30" height= "30" alt="instagram"></a></li>
+    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="30" height= "30" alt="twitter"></a></li>
   </ul>
 </div>
 </footer>
- </body>
- </html>
+</body>
+
+</html>

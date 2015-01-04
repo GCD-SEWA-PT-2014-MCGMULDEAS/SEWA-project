@@ -6,20 +6,6 @@
   <title>GFC STATS.COM</title>
   <link rel = "stylesheet" type="text/css" href="index.css" />
 
-<!--************************************************************************************
-//optinal code to create a gradient effect on background
-  <style type = "text/css">
-  	body{
-  	background-size: 200%;
-  	background: -webkit-linear-gradient(#303030, #606060); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#303030, #606060); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#303030, #606060); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#303030, #606060); /* Standard syntax (must be last) */
-}
-  </style>
-  **************************************************************************************
--->
-
 	<!-- Script to rotate images on the site -->
   
   <script type="text/JavaScript1.2">
@@ -65,11 +51,7 @@
 
 
 <body>
-<!-- ******************************************************************************
-Gavs css ? Section for login and logo in header
-<link rel="stylesheet" type="text/css" href="headerfooter.css">
 
--->
   <div id="header" class="wrap">
 
       <img src ="./Images/logo.jpg" alt = "Logo">
@@ -119,26 +101,6 @@ Gavs css ? Section for login and logo in header
 
 
 <!-- Navigation Bar section****************************************************-->
-<!--**************************old nav bar**********************
-<br \>
-<nav>
-	<div class = "navigation">
-		<ul>
-  			<li><a href="#home">Home</a></li>
-  			<li><a href="#selfcheck">Compare</a></li>
-  			<li><a href="#contact">Contact</a></li>
-  			<li><a href="#about">About</a></li>
-		</ul>
-	
-	</div>
-</nav>
-Gavs code using buttons**********************************************************
-               <input type = "button" name = "home" value = "Home" onclick = "window.location.href='./index.php'">
-               <input type = "button" name = "compare" value = "Comparison" onclick = "window.location.href='./comparison.php'">
-               <input type = "button" name = "about" value = "About Us" onclick = "window.location.href='./about.php'">
-               <input type = "button" name = "contact" value = "Contact Us" onclick = "window.location.href='./contact.php'">
--->
-          
 
 <!-- *************************************************************************************
 NavBar is the section to the left with the links to the text-->
@@ -209,16 +171,14 @@ Section with the body text for the main page
 Footer details here
 -->
 
-<footer class="site-footer">
-
-<div class="col">
+<footer>
+<div class="col" id="firstfootercolumn">
   <h2>Sample links</h2>
-  <ul>
-    <li><a href="#">Terms & Conditions</a></li>
-    <li><a href="#">Sitemap</a></li>
-    <li><a href="#">Useful links</a></li>
-  </ul>
-</div>
+ <span class = "minorlinks"><a href="#">Terms & Conditions</a><br/></span>
+  <span class = "minorlinks"><a href="#">Sitemap</a><br/></span>
+  <span class = "minorlinks"><a href="#">Useful links</a><br/></span>
+  </div>
+
 <div class="col">
   <h2>GFC-Stats.com</h2>
   <ul>
@@ -227,15 +187,17 @@ Footer details here
     <li>All references to any known individuals are for demonstration purposes only</li>
   </ul>
 </div>
+
 <div class="col" id = "image">
   <h2>You can find us on:</h2>
   <ul>
-    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="50" height="50" alt="facebook"></a></li>
-    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="50" height= "50" alt="linkdin"></a></li>
-    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="50" height= "50" alt="instagram"></a></li>
-    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="50" height= "50" alt="twitter"></a></li>
+    <li><a href="#facebook"><img style="float:left" src="./Images/facebook.png" width="30" height="30" alt="facebook"></a></li>
+    <li><a href="#linkedin"><img style="float:left" src="./Images/linkedin.jpg" width="30" height= "30" alt="linkdin"></a></li>
+    <li><a href="#instagram"><img style="float:left" src="./Images/instagram.png" width="30" height= "30" alt="instagram"></a></li>
+    <li><a href="#twitter"><img style="float:left" src="./Images/twitter.png" width="30" height= "30" alt="twitter"></a></li>
   </ul>
 </div>
 </footer>
 </body>
+
 </html>
